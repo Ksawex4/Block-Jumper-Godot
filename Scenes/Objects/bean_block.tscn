@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds4kjmnylu01w"]
+
+[ext_resource type="Texture2D" uid="uid://cwg2cx6ehy0gf" path="res://Textures/BeanBlock/BeanBlockF1.png" id="1_2264p"]
+[ext_resource type="Texture2D" uid="uid://bc653peh6cb8t" path="res://Textures/BeanBlock/BeanBlockF2.png" id="2_j1g6e"]
+[ext_resource type="Texture2D" uid="uid://dqetrplfu8mm4" path="res://Textures/BeanBlock/BeanBlockF3.png" id="3_4e2n1"]
+[ext_resource type="Texture2D" uid="uid://bycj3ur2fnpe6" path="res://Textures/BeanBlock/BeanBlockF4.png" id="4_vuqm0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_o0h20"]
+size = Vector2(50, 50)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eb17q"]
+frames = 4
+speed_scale = 4.0
+frame_0/texture = ExtResource("1_2264p")
+frame_1/texture = ExtResource("2_j1g6e")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_4e2n1")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_vuqm0")
+frame_3/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14tek"]
+size = Vector2(50, 50)
+
+[node name="BeanBlock" type="CharacterBody2D"]
+collision_mask = 0
+
+[node name="BeanBlockMesh" type="MeshInstance2D" parent="."]
+texture_filter = 1
+mesh = SubResource("QuadMesh_o0h20")
+texture = SubResource("AnimatedTexture_eb17q")
+
+[node name="BeanBlockCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_14tek")

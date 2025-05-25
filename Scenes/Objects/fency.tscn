@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca84m2q4atj5b"]
+[gd_scene load_steps=10 format=3 uid="uid://btuf7ucts5n8c"]
 
 [ext_resource type="Texture2D" uid="uid://dg0bknw4oeco4" path="res://Textures/Fency/1.png" id="1_frktg"]
+[ext_resource type="Script" uid="uid://dgu2f0etuscje" path="res://Scripts/Player.gd" id="1_j1hk5"]
 [ext_resource type="Texture2D" uid="uid://dxunk3l8suvrn" path="res://Textures/Fency/2.png" id="2_j1hk5"]
 [ext_resource type="Texture2D" uid="uid://vr0khyvgrysf" path="res://Textures/Fency/3.png" id="3_aml5i"]
 [ext_resource type="Texture2D" uid="uid://dytjd8nd2j8ld" path="res://Textures/Fency/4.png" id="4_huymj"]
@@ -24,14 +25,14 @@ size = Vector2(25, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r12lk"]
 size = Vector2(25, 25)
 
-[node name="Fency" type="RigidBody2D"]
+[node name="Fency" type="CharacterBody2D"]
 texture_filter = 1
-gravity_scale = -1.0
-can_sleep = false
-lock_rotation = true
+collision_layer = 2
+script = ExtResource("1_j1hk5")
+jumpHeight = 400
 
 [node name="FencyMesh" type="MeshInstance2D" parent="."]
-rotation = 3.14159
+rotation = -3.14159
 mesh = SubResource("QuadMesh_ytkl7")
 texture = SubResource("AnimatedTexture_fcs1i")
 
