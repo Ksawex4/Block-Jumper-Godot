@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://di2dwbxolcdpe"]
+
+[ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
+[ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
+[ext_resource type="PackedScene" uid="uid://ds4kjmnylu01w" path="res://Scenes/Objects/bean_block.tscn" id="1_ycph5"]
+[ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
+
+[node name="TestRoom" type="Node2D"]
+
+[node name="PanLoduwka" parent="." instance=ExtResource("1_afs4w")]
+
+[node name="Toasty" parent="." instance=ExtResource("2_3tvqv")]
+
+[node name="Fency" parent="." instance=ExtResource("1_6idp7")]
+position = Vector2(105, 199)
+
+[node name="BeanBlock" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(277, 292)
+scale = Vector2(10, 1)
+
+[node name="BeanBlock2" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(250, 128)
+scale = Vector2(5, 1)
+
+[node name="BeanBlock3" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(369, 242)
+
+[node name="BeanBlock4" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(23, 244)
