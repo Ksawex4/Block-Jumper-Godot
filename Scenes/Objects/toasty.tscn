@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://hhepu0udy5hv"]
+[gd_scene load_steps=5 format=3 uid="uid://hhepu0udy5hv"]
 
 [ext_resource type="Texture2D" uid="uid://dmktkgr7uu4dm" path="res://Textures/Toasty/Toasty.png" id="1_g3tna"]
+[ext_resource type="Script" uid="uid://dgu2f0etuscje" path="res://Scripts/Player.gd" id="1_kect0"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_kect0"]
 size = Vector2(25, 25)
@@ -8,9 +9,14 @@ size = Vector2(25, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12wjm"]
 size = Vector2(25, 22.5)
 
-[node name="Toasty" type="RigidBody2D"]
-can_sleep = false
-lock_rotation = true
+[node name="Toasty" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_kect0")
+jumpHeight = 530
+leftKey = "ToastyLeft"
+rightKey = "ToastyRight"
+jumpKey = "ToastyJump"
+gravityDifference = 10
 
 [node name="ToastyMesh" type="MeshInstance2D" parent="."]
 texture_filter = 1
@@ -23,6 +29,8 @@ position = Vector2(0.02, 1.23)
 shape = SubResource("RectangleShape2D_12wjm")
 
 [node name="HitBoxArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBoxArea"]
 position = Vector2(0.02, 1.23)
