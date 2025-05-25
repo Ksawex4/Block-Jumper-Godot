@@ -34,6 +34,7 @@ script = ExtResource("1_32lqj")
 leftKey = "PanLoduwkaLeft"
 rightKey = "PanLoduwkaRight"
 jumpKey = "PanLoduwkaJump"
+WhosHp = "PanLoduwkaHP"
 
 [node name="PanLoduwkaMesh" type="MeshInstance2D" parent="."]
 rotation = 3.14159
@@ -48,6 +49,8 @@ shape = SubResource("RectangleShape2D_dbqok")
 collision_layer = 2
 collision_mask = 4
 
-[node name="HibBox" type="CollisionShape2D" parent="HitBoxArea"]
+[node name="HitBox" type="CollisionShape2D" parent="HitBoxArea"]
 position = Vector2(0.42, 0.68)
 shape = SubResource("RectangleShape2D_ha7ox")
+
+[connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]
