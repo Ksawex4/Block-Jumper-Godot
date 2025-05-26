@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://q7g1uyohqcqa"]
+
+[ext_resource type="PackedScene" uid="uid://cgpalpqy07qsb" path="res://Scenes/Objects/smooth_camera.tscn" id="1_wi85j"]
+[ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_y1wm0"]
+[ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="3_qm5cq"]
+[ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_y1wm0"]
+[ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit0.png" id="5_salsw"]
+[ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New0.png" id="6_heolw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1wm0"]
+size = Vector2(20, 60)
+
+[node name="MainScreen" type="Node2D"]
+
+[node name="SmoothCamera" parent="." instance=ExtResource("1_wi85j")]
+position = Vector2(-134, -393)
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(256, 120)
+texture = ExtResource("2_y1wm0")
+
+[node name="Fency" parent="." instance=ExtResource("3_qm5cq")]
+visible = false
+position = Vector2(277, 163)
+gravityDifference = -10
+
+[node name="MainMenuButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_y1wm0")
+
+[node name="QuitButton" type="Button" parent="MainMenuButtons"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 254.0
+offset_right = 69.0
+offset_bottom = 280.0
+icon = ExtResource("5_salsw")
+
+[node name="NewButton" type="Button" parent="MainMenuButtons"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 127.0
+offset_right = 105.0
+offset_bottom = 167.0
+icon = ExtResource("6_heolw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(254, 162)
+shape = SubResource("RectangleShape2D_y1wm0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(300, 163)
+shape = SubResource("RectangleShape2D_y1wm0")
+
+[connection signal="pressed" from="MainMenuButtons/QuitButton" to="MainMenuButtons" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MainMenuButtons/NewButton" to="MainMenuButtons" method="_on_new_button_pressed"]
