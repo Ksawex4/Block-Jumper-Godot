@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=7 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
 [ext_resource type="PackedScene" uid="uid://ds4kjmnylu01w" path="res://Scenes/Objects/bean_block.tscn" id="1_ycph5"]
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
+[ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
 
 [node name="TestRoom" type="Node2D"]
 
@@ -33,3 +34,21 @@ position = Vector2(23, 244)
 
 [node name="KillBlock" parent="." instance=ExtResource("5_3tvqv")]
 position = Vector2(471, 253)
+
+[node name="KillBlock2" parent="." instance=ExtResource("5_3tvqv")]
+position = Vector2(496, 253)
+
+[node name="KillBlock3" parent="." instance=ExtResource("5_3tvqv")]
+position = Vector2(484, 228)
+
+[node name="KillBlock6" parent="." instance=ExtResource("5_3tvqv")]
+position = Vector2(497, 203)
+
+[node name="KillBlock4" parent="." instance=ExtResource("5_3tvqv")]
+position = Vector2(521, 253)
+
+[node name="KillBlock5" parent="." instance=ExtResource("5_3tvqv")]
+position = Vector2(509, 228)
+
+[node name="Bean" parent="." instance=ExtResource("6_548gw")]
+position = Vector2(411, 126)
