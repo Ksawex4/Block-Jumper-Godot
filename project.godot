@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Block Jumper"
-run/main_scene="uid://di2dwbxolcdpe"
+config/version="0.0.0.1"
+run/main_scene="uid://q7g1uyohqcqa"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://i1s5i5evseoc"
+config/macos_native_icon="res://FencyIcon.icns"
+config/windows_native_icon="res://FencyIcon.ico"
 
 [autoload]
 

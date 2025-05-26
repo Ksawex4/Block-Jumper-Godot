@@ -7,3 +7,10 @@ func _process(delta: float) -> void:
 	if node != null:
 		position.x = lerp(position.x, node.position.x, 0.1)
 		position.y = lerp(position.y, node.position.y, 0.1)
+	
+	if Input.is_action_just_pressed("CamFency") && scene.has_node("Fency"):
+		Global.FollowWho = "Fency"
+	elif Input.is_action_just_pressed("CamPanLoduwka") && scene.has_node("PanLoduwka"):
+		Global.FollowWho = "PanLoduwka"
+	elif Input.is_action_just_pressed("CamToasty") && scene.has_node("Toasty"):
+		Global.FollowWho = "Toasty"

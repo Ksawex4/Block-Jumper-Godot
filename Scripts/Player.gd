@@ -13,6 +13,13 @@ func _ready() -> void:
 	updateBar()
 
 func _physics_process(delta: float) -> void:
+	var scene = get_tree().current_scene
+	if !scene.has_node("Fency") && !scene.has_node("Toasty") && !scene.has_node("PanLoduwka"):
+		Global.FencyHP = 10
+		Global.ToastyHP = 10
+		Global.PanLoduwkaHP = 20
+		get_tree().change_scene_to_file("res://Scenes/main_screen.tscn")
+	
 	if Global.get(WhosHp) <= 0:
 		queue_free()
 	
