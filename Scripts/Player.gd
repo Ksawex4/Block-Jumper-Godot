@@ -7,6 +7,10 @@ extends CharacterBody2D
 @export var jumpKey = "FencyJump"
 @export var gravityDifference = 0
 @export var WhosHp = "FencyHP"
+@export var WhosMaxHp = "FencyMaxHP"
+
+func _ready() -> void:
+	updateBar()
 
 func _physics_process(delta: float) -> void:
 	if Global.get(WhosHp) <= 0:
@@ -41,3 +45,17 @@ func hurt(damage):
 	HP = HP - damage
 	Global.set(WhosHp, HP)
 	print (WhosHp + ": " + str(HP))
+	updateBar()
+
+func updateBar():
+	var HP = Global.get(WhosHp)
+	var MaxHP = Global.get(WhosMaxHp)
+	var Bob = float(HP) / MaxHP
+	$Control/HP.size.x = $Control/Bar.size.x * Bob
+	if HP < MaxHP:
+		$Control/Label.text = str(HP) + " / " + str(MaxHP)
+	else:
+		$Control/Label.text = str(HP)
+	if HP > MaxHP:
+		Global.set(WhosHp, MaxHP)
+		updateBar()

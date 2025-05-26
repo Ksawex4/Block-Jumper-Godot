@@ -3,7 +3,10 @@ extends Node
 var Gravity = 10
 var FencyHP = 10
 var ToastyHP = 10
-var PanLoduwkaHP = 10
+var PanLoduwkaHP = 20
+var FencyMaxHP = 10
+var ToastyMaxHP = 10
+var PanLoduwkaMaxHP = 20
 var Beans = 0
 var FollowWho = "Fency"
 
