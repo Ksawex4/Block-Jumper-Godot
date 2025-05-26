@@ -32,10 +32,12 @@ func move(x):
 
 
 func _on_hit_box_area_body_entered(body: Node2D) -> void:
-	var hit = body.get(damage)
+	var hit = body.get("damage")
 	hurt(hit)
+	body.queue_free()
 
 func hurt(damage):
 	var HP = Global.get(WhosHp)
 	HP = HP - damage
 	Global.set(WhosHp, HP)
+	print (WhosHp + ": " + str(HP))
