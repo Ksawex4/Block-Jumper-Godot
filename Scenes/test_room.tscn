@@ -52,3 +52,12 @@ position = Vector2(509, 228)
 
 [node name="Bean" parent="." instance=ExtResource("6_548gw")]
 position = Vector2(411, 126)
+
+[node name="Bean2" parent="." instance=ExtResource("6_548gw")]
+position = Vector2(255, 20)
+
+[node name="Bean3" parent="." instance=ExtResource("6_548gw")]
+position = Vector2(393, 30)
+
+[node name="Bean4" parent="." instance=ExtResource("6_548gw")]
+position = Vector2(126, 46)
