@@ -12,7 +12,9 @@ var FollowWho = "Fency"
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):
-		Global.FencyHP = 10
-		Global.ToastyHP = 10
-		Global.PanLoduwkaHP = 20
+		FencyHP = 10
+		ToastyHP = 10
+		PanLoduwkaHP = 20
+		FollowWho = "Fency"
+		Beans = 0
 		get_tree().change_scene_to_file("res://Scenes/main_screen.tscn")
