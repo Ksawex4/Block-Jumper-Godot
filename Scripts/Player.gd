@@ -6,8 +6,12 @@ extends CharacterBody2D
 @export var rightKey = "FencyRight"
 @export var jumpKey = "FencyJump"
 @export var gravityDifference = 0
+@export var WhosHp = "FencyHP"
 
 func _physics_process(delta: float) -> void:
+	if Global.get(WhosHp) <= 0:
+		queue_free()
+	
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
 	
@@ -25,3 +29,15 @@ func jump():
 
 func move(x):
 	velocity.x = speed * x
+
+
+func _on_hit_box_area_body_entered(body: Node2D) -> void:
+	var hit = body.get("damage")
+	hurt(hit)
+	body.queue_free()
+
+func hurt(damage):
+	var HP = Global.get(WhosHp)
+	HP = HP - damage
+	Global.set(WhosHp, HP)
+	print (WhosHp + ": " + str(HP))
