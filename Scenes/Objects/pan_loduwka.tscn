@@ -36,6 +36,8 @@ rightKey = "PanLoduwkaRight"
 jumpKey = "PanLoduwkaJump"
 WhosHp = "PanLoduwkaHP"
 WhosMaxHp = "PanLoduwkaMaxHP"
+stick = "PLStick"
+who = "PanLoduwka"
 
 [node name="PanLoduwkaMesh" type="MeshInstance2D" parent="."]
 rotation = 3.14159

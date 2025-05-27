@@ -8,15 +8,26 @@ extends CharacterBody2D
 @export var gravityDifference = 0
 @export var WhosHp = "FencyHP"
 @export var WhosMaxHp = "FencyMaxHP"
+@export var stick = "FStick"
+@export var who = "Fency"
+var stickInstance
+var stickSpawnCooldown = 0.0
 
 func _ready() -> void:
 	updateBar()
+	if Global.get(stick):
+		spawnStick()
 
 func _physics_process(delta: float) -> void:
 	var scene = get_tree().current_scene
-	
 	if Global.get(WhosHp) <= 0:
 		queue_free()
+	
+	if stickSpawnCooldown > 0.0:
+		stickSpawnCooldown -= 0.1
+	
+	if !stickInstance && Global.get(stick) && stickSpawnCooldown <= 0.0:
+		spawnStick()
 	
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
@@ -52,3 +63,15 @@ func updateBar():
 		$Control/Label.text = str(HP) + " / " + str(MaxHP)
 	else:
 		$Control/Label.text = str(HP)
+
+func spawnStick():
+	stickSpawnCooldown = 0.3
+	var scene = get_tree().current_scene
+	if stickInstance:
+		stickInstance.queue_free()
+	stickInstance = preload("res://Scenes/Objects/stick.tscn").instantiate()
+	scene.add_child.call_deferred(stickInstance)
+	stickInstance.who = str(who)
+	stickInstance.stick = stick
+	if get_tree().current_scene.scene_file_path == "res://Scenes/main_menu.tscn":
+		stickInstance.visible = false

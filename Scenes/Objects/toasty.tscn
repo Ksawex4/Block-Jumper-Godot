@@ -20,6 +20,8 @@ jumpKey = "ToastyJump"
 gravityDifference = 10
 WhosHp = "ToastyHP"
 WhosMaxHp = "ToastyMaxHP"
+stick = "TStick"
+who = "Toasty"
 
 [node name="ToastyMesh" type="MeshInstance2D" parent="."]
 texture_filter = 1

@@ -7,8 +7,12 @@ var PanLoduwkaHP = 20
 var FencyMaxHP = 10
 var ToastyMaxHP = 10
 var PanLoduwkaMaxHP = 20
+var FStick = true
+var PLStick = true
+var TStick = true
 var Beans = 0
 var FollowWho = "Fency"
+var spawn = 0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):
@@ -23,4 +27,4 @@ func QuitToMenu():
 	PanLoduwkaHP = 20
 	FollowWho = "Fency"
 	Beans = 0
-	get_tree().change_scene_to_file("res://Scenes/main_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

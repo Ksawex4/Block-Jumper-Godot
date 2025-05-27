@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=11 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
+[ext_resource type="PackedScene" uid="uid://pvjoht0ijntt" path="res://Scenes/Objects/stick.tscn" id="10_3rmdf"]
 
 [node name="TestRoom" type="Node2D"]
 
@@ -82,3 +83,6 @@ position = Vector2(204, 242)
 
 [node name="TrashCan4" parent="." instance=ExtResource("9_f2n0o")]
 position = Vector2(149, 242)
+
+[node name="Stick" parent="." instance=ExtResource("10_3rmdf")]
+position = Vector2(159, 205)
