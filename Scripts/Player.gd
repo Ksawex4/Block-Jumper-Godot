@@ -23,30 +23,19 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
 	
-	if Input.is_action_pressed(jumpKey):
-		jump()
+	if Input.is_action_pressed(jumpKey) && is_on_floor():
+		velocity.y = -jumpHeight
 	
-	var horizontalDirection = Input.get_axis(leftKey, rightKey)
-	move(horizontalDirection)
+	velocity.x = speed * Input.get_axis(leftKey, rightKey)
 	
 	move_and_slide()
 
-func jump():
-	if is_on_floor():
-		velocity.y = -jumpHeight
-
-func move(x):
-	velocity.x = speed * x
-
-
 func _on_hit_box_area_body_entered(body: Node2D) -> void:
-	var hit = body.get("damage")
-	hurt(hit)
+	hurt(body.get("damage"))
 	body.queue_free()
 
 func hurt(damage):
-	var HP = Global.get(WhosHp)
-	HP = HP - damage
+	var HP = Global.get(WhosHp) - damage
 	Global.set(WhosHp, HP)
 	print (WhosHp + ": " + str(HP))
 	updateBar()
@@ -55,11 +44,10 @@ func updateBar():
 	var HP = Global.get(WhosHp)
 	var MaxHP = Global.get(WhosMaxHp)
 	var Bob = float(HP) / MaxHP
+	if HP > MaxHP:
+		Global.set(WhosHp, MaxHP)
 	$Control/HP.size.x = $Control/Bar.size.x * Bob
 	if HP < MaxHP:
 		$Control/Label.text = str(HP) + " / " + str(MaxHP)
 	else:
 		$Control/Label.text = str(HP)
-	if HP > MaxHP:
-		Global.set(WhosHp, MaxHP)
-		updateBar()

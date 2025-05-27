@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
-[ext_resource type="PackedScene" uid="uid://cgpalpqy07qsb" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 
 [node name="TestRoom" type="Node2D"]
