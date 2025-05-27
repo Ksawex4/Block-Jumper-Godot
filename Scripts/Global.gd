@@ -12,9 +12,15 @@ var FollowWho = "Fency"
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):
-		FencyHP = 10
-		ToastyHP = 10
-		PanLoduwkaHP = 20
-		FollowWho = "Fency"
-		Beans = 0
-		get_tree().change_scene_to_file("res://Scenes/main_screen.tscn")
+		QuitToMenu()
+	
+	if FencyHP <= 0 && PanLoduwkaHP <= 0 && ToastyHP <= 0:
+		QuitToMenu()
+
+func QuitToMenu():
+	FencyHP = 10
+	ToastyHP = 10
+	PanLoduwkaHP = 20
+	FollowWho = "Fency"
+	Beans = 0
+	get_tree().change_scene_to_file("res://Scenes/main_screen.tscn")
