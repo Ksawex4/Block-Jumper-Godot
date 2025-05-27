@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=10 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
+[ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
 
 [node name="TestRoom" type="Node2D"]
 
@@ -69,3 +70,12 @@ position = Vector2(126, 46)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8h618")
 autoplay = true
+
+[node name="TrashCan" parent="." instance=ExtResource("9_f2n0o")]
+position = Vector2(261, 242)
+
+[node name="TrashCan2" parent="." instance=ExtResource("9_f2n0o")]
+position = Vector2(322, 242)
+
+[node name="TrashCan3" parent="." instance=ExtResource("9_f2n0o")]
+position = Vector2(174, 242)

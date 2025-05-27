@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="1_wi85j"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_y1wm0"]
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="3_qm5cq"]
-[ext_resource type="Script" path="res://Scripts/main_menu_buttons.gd" id="4_y1wm0"]
+[ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_y1wm0"]
 [ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_salsw"]
 [ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_heolw"]
 [ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_heolw"]
