@@ -1,11 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://q7g1uyohqcqa"]
+[gd_scene load_steps=17 format=3 uid="uid://q7g1uyohqcqa"]
 
 [ext_resource type="PackedScene" uid="uid://cgpalpqy07qsb" path="res://Scenes/Objects/smooth_camera.tscn" id="1_wi85j"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_y1wm0"]
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="3_qm5cq"]
 [ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_y1wm0"]
-[ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit0.png" id="5_salsw"]
-[ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New0.png" id="6_heolw"]
+[ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_salsw"]
+[ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_heolw"]
+[ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_heolw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_salsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_heolw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_057lb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xyvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b1if"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kipn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ib1yv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfxh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1wm0"]
 size = Vector2(20, 60)
@@ -25,27 +42,38 @@ visible = false
 position = Vector2(277, 163)
 gravityDifference = -10
 
-[node name="MainMenuButtons" type="Control" parent="."]
+[node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_y1wm0")
 
-[node name="QuitButton" type="Button" parent="MainMenuButtons"]
+[node name="QuitButton" type="Button" parent="Buttons"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 1.0
-offset_top = 254.0
-offset_right = 69.0
-offset_bottom = 280.0
+offset_left = 2.0
+offset_top = 253.0
+offset_right = 106.0
+offset_bottom = 293.0
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_salsw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_heolw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_057lb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6xyvr")
 icon = ExtResource("5_salsw")
 
-[node name="NewButton" type="Button" parent="MainMenuButtons"]
+[node name="NewButton" type="Button" parent="Buttons"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 1.0
-offset_top = 127.0
-offset_right = 105.0
-offset_bottom = 167.0
+offset_top = 129.0
+offset_right = 104.0
+offset_bottom = 169.0
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8b1if")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kipn8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ib1yv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfxh6")
 icon = ExtResource("6_heolw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -58,5 +86,9 @@ shape = SubResource("RectangleShape2D_y1wm0")
 position = Vector2(300, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
 
-[connection signal="pressed" from="MainMenuButtons/QuitButton" to="MainMenuButtons" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="MainMenuButtons/NewButton" to="MainMenuButtons" method="_on_new_button_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_heolw")
+autoplay = true
+
+[connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/NewButton" to="Buttons" method="_on_new_button_pressed"]
