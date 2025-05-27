@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://q7g1uyohqcqa"]
+[gd_scene load_steps=17 format=3 uid="uid://q7g1uyohqcqa"]
 
 [ext_resource type="PackedScene" uid="uid://cgpalpqy07qsb" path="res://Scenes/Objects/smooth_camera.tscn" id="1_wi85j"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_y1wm0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_y1wm0"]
 [ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_salsw"]
 [ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_heolw"]
+[ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_heolw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_salsw"]
 
@@ -84,6 +85,10 @@ shape = SubResource("RectangleShape2D_y1wm0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(300, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_heolw")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/NewButton" to="Buttons" method="_on_new_button_pressed"]
