@@ -78,4 +78,7 @@ position = Vector2(261, 242)
 position = Vector2(322, 242)
 
 [node name="TrashCan3" parent="." instance=ExtResource("9_f2n0o")]
-position = Vector2(174, 242)
+position = Vector2(204, 242)
+
+[node name="TrashCan4" parent="." instance=ExtResource("9_f2n0o")]
+position = Vector2(149, 242)

@@ -14,8 +14,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var scene = get_tree().current_scene
-	if !scene.has_node("Fency") && !scene.has_node("Toasty") && !scene.has_node("PanLoduwka"):
-		Input.action_press("Quit")
 	
 	if Global.get(WhosHp) <= 0:
 		queue_free()
@@ -32,12 +30,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_hit_box_area_body_entered(body: Node2D) -> void:
 	hurt(body.get("damage"))
-	body.queue_free()
+	if body.scene_file_path != "res://Scenes/Objects/spamguys.tscn":
+		body.queue_free()
 
 func hurt(damage):
 	var HP = Global.get(WhosHp) - damage
 	Global.set(WhosHp, HP)
 	print (WhosHp + ": " + str(HP))
+	if Global.FencyHP <= 0 && Global.PanLoduwkaHP <= 0 && Global.ToastyHP <= 0:
+		Input.action_press("Quit")
 	updateBar()
 
 func updateBar():

@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 		Global.FollowWho = "PanLoduwka"
 	elif Input.is_action_just_pressed("CamToasty") && scene.has_node("Toasty"):
 		Global.FollowWho = "Toasty"
+	
