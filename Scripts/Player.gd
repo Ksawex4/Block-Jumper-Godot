@@ -12,8 +12,10 @@ extends CharacterBody2D
 @export var who = "Fency"
 var stickInstance
 var stickSpawnCooldown = 0.0
+var DefaultHpBarLenght
 
 func _ready() -> void:
+	DefaultHpBarLenght = $Control/HP.size.x
 	updateBar()
 	if Global.get(stick):
 		spawnStick()
@@ -58,7 +60,7 @@ func updateBar():
 	var Bob = float(HP) / MaxHP
 	if HP > MaxHP:
 		Global.set(WhosHp, MaxHP)
-	$Control/HP.size.x = $Control/Bar.size.x * Bob
+	$Control/HP.size.x = DefaultHpBarLenght * Bob
 	if HP < MaxHP:
 		$Control/Label.text = str(HP) + " / " + str(MaxHP)
 	else:
