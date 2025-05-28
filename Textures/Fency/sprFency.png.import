@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v5cgsx5y5lwl"
-path="res://.godot/imported/3PanLoduwka.png-ebe2a33348793d0ebdadb6b1a7436e57.ctex"
+uid="uid://cbdmgya1waspc"
+path="res://.godot/imported/sprFency.png-c25176f4f074257afdeae40d04bdf19a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/PanLoduwka/PanLoduwkaIdle/3PanLoduwka.png"
-dest_files=["res://.godot/imported/3PanLoduwka.png-ebe2a33348793d0ebdadb6b1a7436e57.ctex"]
+source_file="res://Textures/Fency/sprFency.png"
+dest_files=["res://.godot/imported/sprFency.png-c25176f4f074257afdeae40d04bdf19a.ctex"]
 
 [params]
 

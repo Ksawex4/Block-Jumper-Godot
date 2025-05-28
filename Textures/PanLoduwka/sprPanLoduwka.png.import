@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0e0t14l3fp8h"
-path="res://.godot/imported/1PanLoduwka.png-63defdabb5991f9d2a8019b41f5dbe75.ctex"
+uid="uid://bjto1qb2vc6de"
+path="res://.godot/imported/sprPanLoduwka.png-5712cc13ad6e10739e090ff8e0c89aa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/PanLoduwka/PanLoduwkaIdle/1PanLoduwka.png"
-dest_files=["res://.godot/imported/1PanLoduwka.png-63defdabb5991f9d2a8019b41f5dbe75.ctex"]
+source_file="res://Textures/PanLoduwka/sprPanLoduwka.png"
+dest_files=["res://.godot/imported/sprPanLoduwka.png-5712cc13ad6e10739e090ff8e0c89aa6.ctex"]
 
 [params]
 

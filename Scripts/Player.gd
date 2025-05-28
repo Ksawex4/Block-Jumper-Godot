@@ -2,25 +2,35 @@ extends CharacterBody2D
 
 @export var speed = 150
 @export var jumpHeight = 380
-@export var leftKey = "FencyLeft"
-@export var rightKey = "FencyRight"
-@export var jumpKey = "FencyJump"
-@export var gravityDifference = 0
-@export var WhosHp = "FencyHP"
-@export var WhosMaxHp = "FencyMaxHP"
-@export var stick = "FStick"
-@export var who = "Fency"
+@export var leftKey := "FencyLeft"
+@export var rightKey := "FencyRight"
+@export var jumpKey := "FencyJump"
+@export var gravityDifference := 0
+@export var WhosHp := "FencyHP"
+@export var WhosMaxHp := "FencyMaxHP"
+@export var stick := "FStick"
+@export var who := "Fency"
+var hasLeftAnimation
 var stickInstance
-var stickSpawnCooldown = 0.0
+var stickSpawnCooldown := 0.0
 var DefaultHpBarLenght
 
 func _ready() -> void:
+	hasLeftAnimation = $AnimatedSprite2D.sprite_frames.has_animation("walkLeft")
+	$AnimatedSprite2D.play("default")
 	DefaultHpBarLenght = $Control/HP.size.x
 	updateBar()
 	if Global.get(stick):
 		spawnStick()
 
 func _physics_process(delta: float) -> void:
+	if hasLeftAnimation:
+		if velocity.x > 0 && $AnimatedSprite2D.animation != "walkRight":
+			$AnimatedSprite2D.play("walkRight")
+		elif velocity.x < 0 && $AnimatedSprite2D.animation != "walkLeft":
+			$AnimatedSprite2D.play("walkLeft")
+		elif velocity.x == 0 && $AnimatedSprite2D.animation != "default":
+			$AnimatedSprite2D.play("default")
 	var scene = get_tree().current_scene
 	if Global.get(WhosHp) <= 0:
 		queue_free()
