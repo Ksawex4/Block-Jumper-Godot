@@ -29,7 +29,7 @@ size = Vector2(25, 25)
 texture_filter = 1
 collision_layer = 2
 script = ExtResource("1_j1hk5")
-jumpHeight = 400
+jumpHeight = 420
 
 [node name="FencyMesh" type="MeshInstance2D" parent="."]
 rotation = -3.14159
