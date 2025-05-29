@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxfyroaux4yi3"]
+
+[ext_resource type="Script" uid="uid://th7u26ncd5qq" path="res://Scripts/fly_thing.gd" id="1_5d2lu"]
+[ext_resource type="Texture2D" uid="uid://can626b5musig" path="res://Textures/FlyingThing/FlyingThing.png" id="2_0wo1n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wo1n"]
+radius = 20.0062
+
+[node name="FlyThing" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_5d2lu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.0441501, 0.0540915)
+texture = ExtResource("2_0wo1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_0wo1n")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.5
+target_desired_distance = 2.5
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

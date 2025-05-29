@@ -1,7 +1,7 @@
 extends Camera2D
 
 func _process(delta: float) -> void:
-	var scene = get_tree().get_current_scene()
+	var scene = get_tree().current_scene
 	var node = scene.get_node_or_null(Global.FollowWho)
 	
 	if node != null:
