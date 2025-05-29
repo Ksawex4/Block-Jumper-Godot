@@ -127,7 +127,7 @@ who = "PanLoduwka"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wc7eg")
-frame_progress = 0.0833453
+frame_progress = 0.594986
 
 [node name="PanLoduwkaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

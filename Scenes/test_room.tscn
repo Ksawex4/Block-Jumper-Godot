@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
-[ext_resource type="PackedScene" uid="uid://ds4kjmnylu01w" path="res://Scenes/Objects/bean_block.tscn" id="1_ycph5"]
+[ext_resource type="PackedScene" uid="uid://d35pybk0uw3rv" path="res://Scenes/Objects/bean_block.tscn" id="1_ycph5"]
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
-[ext_resource type="PackedScene" uid="uid://pvjoht0ijntt" path="res://Scenes/Objects/stick.tscn" id="10_3rmdf"]
+[ext_resource type="Texture2D" uid="uid://cwy2euwwaaks1" path="res://Textures/BeanBlock/BeanBlockF1.png" id="11_wv2xt"]
 
 [node name="TestRoom" type="Node2D"]
 
@@ -22,37 +22,23 @@ position = Vector2(39, 172)
 [node name="Fency" parent="." instance=ExtResource("1_6idp7")]
 position = Vector2(105, 199)
 
-[node name="BeanBlock" parent="." instance=ExtResource("1_ycph5")]
-position = Vector2(277, 292)
-scale = Vector2(10, 1)
-
-[node name="BeanBlock2" parent="." instance=ExtResource("1_ycph5")]
-position = Vector2(250, 128)
-scale = Vector2(5, 1)
-
-[node name="BeanBlock3" parent="." instance=ExtResource("1_ycph5")]
-position = Vector2(369, 242)
-
-[node name="BeanBlock4" parent="." instance=ExtResource("1_ycph5")]
-position = Vector2(23, 244)
-
 [node name="KillBlock" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(471, 253)
+position = Vector2(471, 249)
 
 [node name="KillBlock2" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(496, 253)
+position = Vector2(503, 249)
 
 [node name="KillBlock3" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(484, 228)
+position = Vector2(487, 217)
 
 [node name="KillBlock6" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(497, 203)
+position = Vector2(503, 185)
 
 [node name="KillBlock4" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(521, 253)
+position = Vector2(535, 249)
 
 [node name="KillBlock5" parent="." instance=ExtResource("5_3tvqv")]
-position = Vector2(509, 228)
+position = Vector2(519, 217)
 
 [node name="Bean" parent="." instance=ExtResource("6_548gw")]
 position = Vector2(411, 126)
@@ -84,5 +70,33 @@ position = Vector2(204, 242)
 [node name="TrashCan4" parent="." instance=ExtResource("9_f2n0o")]
 position = Vector2(149, 242)
 
-[node name="Stick" parent="." instance=ExtResource("10_3rmdf")]
-position = Vector2(159, 205)
+[node name="BeanBlock" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(278, 282)
+Size = Vector2(550, 32)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+texture_repeat = 3
+offset_left = -478.0
+offset_top = 331.0
+offset_right = -446.0
+offset_bottom = 363.0
+texture = ExtResource("11_wv2xt")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="BeanBlock2" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(250, 137)
+Size = Vector2(140, 32)
+
+[node name="BeanBlock3" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(366, 250)
+Size = Vector2(32, 32)
+
+[node name="BeanBlock4" parent="." instance=ExtResource("1_ycph5")]
+position = Vector2(22, 250)
+Size = Vector2(32, 32)

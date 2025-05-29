@@ -1,34 +1,75 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds4kjmnylu01w"]
+[gd_scene load_steps=10 format=3 uid="uid://d35pybk0uw3rv"]
 
-[ext_resource type="Texture2D" uid="uid://cwg2cx6ehy0gf" path="res://Textures/BeanBlock/BeanBlockF1.png" id="1_2264p"]
-[ext_resource type="Texture2D" uid="uid://bc653peh6cb8t" path="res://Textures/BeanBlock/BeanBlockF2.png" id="2_j1g6e"]
-[ext_resource type="Texture2D" uid="uid://dqetrplfu8mm4" path="res://Textures/BeanBlock/BeanBlockF3.png" id="3_4e2n1"]
-[ext_resource type="Texture2D" uid="uid://bycj3ur2fnpe6" path="res://Textures/BeanBlock/BeanBlockF4.png" id="4_vuqm0"]
+[ext_resource type="Texture2D" uid="uid://cwy2euwwaaks1" path="res://Textures/BeanBlock/BeanBlockF1.png" id="1_2264p"]
+[ext_resource type="Script" uid="uid://c7j6qtrlrjr0j" path="res://Scenes/Objects/bean_block.gd" id="1_uuxnd"]
+[ext_resource type="Texture2D" uid="uid://cy76oylpquvdd" path="res://Textures/BeanBlock/BeanBlockF2.png" id="3_j1g6e"]
+[ext_resource type="Texture2D" uid="uid://djadu6syn1m4v" path="res://Textures/BeanBlock/BeanBlockF3.png" id="4_4e2n1"]
+[ext_resource type="Texture2D" uid="uid://blug1wug1jyyu" path="res://Textures/BeanBlock/BeanBlockF4.png" id="5_vuqm0"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_o0h20"]
-size = Vector2(50, 50)
+[sub_resource type="Animation" id="Animation_j1g6e"]
+resource_name = "BeanBlock"
+length = 1.2
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_2264p"), ExtResource("3_j1g6e"), ExtResource("4_4e2n1"), ExtResource("5_vuqm0")]
+}
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_eb17q"]
-frames = 4
-speed_scale = 4.0
-frame_0/texture = ExtResource("1_2264p")
-frame_1/texture = ExtResource("2_j1g6e")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("3_4e2n1")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("4_vuqm0")
-frame_3/duration = 1.0
+[sub_resource type="Animation" id="Animation_4e2n1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_j1g6e")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vuqm0"]
+_data = {
+&"BeanBlock": SubResource("Animation_j1g6e"),
+&"RESET": SubResource("Animation_4e2n1")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14tek"]
-size = Vector2(50, 50)
+size = Vector2(32, 32)
 
 [node name="BeanBlock" type="CharacterBody2D"]
 collision_mask = 0
+script = ExtResource("1_uuxnd")
 
-[node name="BeanBlockMesh" type="MeshInstance2D" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
-mesh = SubResource("QuadMesh_o0h20")
-texture = SubResource("AnimatedTexture_eb17q")
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_j1g6e")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="BeanBlockCollision" type="CollisionShape2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_vuqm0")
+}
+speed_scale = 1.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_14tek")
