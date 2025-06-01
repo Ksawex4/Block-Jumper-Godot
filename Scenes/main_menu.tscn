@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfqojctd5pm0c"]
+[gd_scene load_steps=23 format=3 uid="uid://bfqojctd5pm0c"]
 
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_yhxw7"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_vr1f0"]
 [ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_t1dhk"]
 [ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_5egv6"]
+[ext_resource type="Texture2D" uid="uid://canx0jux42rum" path="res://Textures/Buttons/Achievements.png" id="7_yhxw7"]
+[ext_resource type="Script" uid="uid://drfgp0gner7jx" path="res://Scripts/AchievementsLabel.gd" id="9_trj04"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_salsw"]
 
@@ -23,6 +25,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ib1yv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfxh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trj04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16hvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr1f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1dhk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1wm0"]
 size = Vector2(20, 60)
@@ -78,6 +88,21 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ib1yv")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rfxh6")
 icon = ExtResource("6_t1dhk")
 
+[node name="AchievementsButton" type="Button" parent="Buttons"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -52.0
+offset_top = 170.0
+offset_right = 130.0
+offset_bottom = 213.0
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trj04")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_16hvj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1dhk")
+icon = ExtResource("7_yhxw7")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -88,9 +113,36 @@ shape = SubResource("RectangleShape2D_y1wm0")
 position = Vector2(308, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-347, 586)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(254, 162)
+shape = SubResource("RectangleShape2D_y1wm0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(308, 163)
+shape = SubResource("RectangleShape2D_y1wm0")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5egv6")
 autoplay = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = -347.0
+offset_top = 586.0
+offset_right = 95.0
+offset_bottom = 986.0
+bbcode_enabled = true
+text = "[color=yellow]Your current achievements:[/color]
+"
+script = ExtResource("9_trj04")
+
+[node name="Timer" type="Timer" parent="RichTextLabel"]
+autostart = true
+
 [connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/NewButton" to="Buttons" method="_on_new_button_pressed"]
+[connection signal="pressed" from="Buttons/AchievementsButton" to="Buttons" method="_on_achievements_button_pressed"]
+[connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_timer_timeout"]
