@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d35pybk0uw3rv"]
 
 [ext_resource type="Texture2D" uid="uid://cwy2euwwaaks1" path="res://Textures/BeanBlock/BeanBlockF1.png" id="1_2264p"]
-[ext_resource type="Script" uid="uid://c7j6qtrlrjr0j" path="res://Scenes/Objects/bean_block.gd" id="1_uuxnd"]
+[ext_resource type="Script" uid="uid://c7j6qtrlrjr0j" path="res://Scripts/bean_block.gd" id="1_uuxnd"]
 [ext_resource type="Texture2D" uid="uid://cy76oylpquvdd" path="res://Textures/BeanBlock/BeanBlockF2.png" id="3_j1g6e"]
 [ext_resource type="Texture2D" uid="uid://djadu6syn1m4v" path="res://Textures/BeanBlock/BeanBlockF3.png" id="4_4e2n1"]
 [ext_resource type="Texture2D" uid="uid://blug1wug1jyyu" path="res://Textures/BeanBlock/BeanBlockF4.png" id="5_vuqm0"]
@@ -73,3 +73,4 @@ speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_14tek")
+disabled = true
