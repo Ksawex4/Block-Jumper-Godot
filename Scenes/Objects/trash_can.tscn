@@ -1,23 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ynbmsngdc15"]
+[gd_scene load_steps=5 format=3 uid="uid://0ynbmsngdc15"]
 
 [ext_resource type="Texture2D" uid="uid://bwiblx67nnqux" path="res://Textures/TrashCan/TrashCan.png" id="1_2runf"]
 [ext_resource type="Script" uid="uid://dev7a134mfhmo" path="res://Scripts/trash_can.gd" id="1_g4vuy"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_g4vuy"]
-size = Vector2(50, 50)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4hho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6ol"]
-size = Vector2(31, 42)
+size = Vector2(40, 54)
 
 [node name="TrashCan" type="CharacterBody2D"]
 script = ExtResource("1_g4vuy")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-rotation = 3.14159
-mesh = SubResource("QuadMesh_g4vuy")
 texture = ExtResource("1_2runf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,7 +24,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_7p6ol")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

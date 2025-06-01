@@ -73,4 +73,3 @@ speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_14tek")
-disabled = true

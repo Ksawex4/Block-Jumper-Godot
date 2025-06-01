@@ -34,7 +34,7 @@ who = "Toasty"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kect0")
 
-[node name="ToastyCollision" type="CollisionShape2D" parent="."]
+[node name="SolidsCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_12wjm")
 

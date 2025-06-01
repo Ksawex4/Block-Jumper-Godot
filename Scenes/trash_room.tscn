@@ -1,0 +1,491 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjqsvvt2otbkx"]
+
+[ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_imhd6"]
+[ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_fanlt"]
+[ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="3_44u3g"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="4_6yt8x"]
+[ext_resource type="PackedScene" uid="uid://d35pybk0uw3rv" path="res://Scenes/Objects/bean_block.tscn" id="5_drr2j"]
+[ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="6_44u3g"]
+[ext_resource type="AudioStream" uid="uid://6w3wleca624c" path="res://Songs/souTrash.wav" id="6_fanlt"]
+
+[node name="TrashRoom" type="Node2D"]
+
+[node name="Fency" parent="." instance=ExtResource("1_imhd6")]
+position = Vector2(-32, -64)
+
+[node name="Toasty" parent="." instance=ExtResource("2_fanlt")]
+position = Vector2(-32, -96)
+
+[node name="PanLoduwka" parent="." instance=ExtResource("3_44u3g")]
+position = Vector2(-32, -128)
+
+[node name="SmoothCamera" parent="." instance=ExtResource("4_6yt8x")]
+position = Vector2(-48, -192)
+
+[node name="Solids" type="Node2D" parent="."]
+
+[node name="BeanBlock" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-48, 112)
+scale = Vector2(3, 5)
+
+[node name="BeanBlock2" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(48, 176)
+scale = Vector2(3, 3)
+
+[node name="BeanBlock6" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(144, 288)
+scale = Vector2(3, 6)
+
+[node name="BeanBlock7" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(288, 208)
+scale = Vector2(6, 3)
+
+[node name="BeanBlock8" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(576, 144)
+scale = Vector2(8, 3)
+
+[node name="BeanBlock9" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(832, 144)
+scale = Vector2(8, 3)
+
+[node name="BeanBlock10" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(720, 224)
+scale = Vector2(1, 2)
+
+[node name="BeanBlock35" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(800, 240)
+scale = Vector2(4, 3)
+
+[node name="BeanBlock36" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1008, 144)
+scale = Vector2(3, 3)
+
+[node name="BeanBlock37" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(960, 224)
+scale = Vector2(6, 2)
+
+[node name="BeanBlock38" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(976, 288)
+scale = Vector2(7, 2)
+
+[node name="BeanBlock39" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1184, 368)
+scale = Vector2(2, 3)
+
+[node name="BeanBlock42" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1120, 528)
+scale = Vector2(2, 3)
+
+[node name="BeanBlock43" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1200, 576)
+scale = Vector2(3, 2)
+
+[node name="BeanBlock44" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1392, 591)
+scale = Vector2(5, 3)
+
+[node name="BeanBlock105" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1256, 592)
+scale = Vector2(0.5, 1)
+
+[node name="BeanBlock45" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1520, 304)
+scale = Vector2(9, 3)
+
+[node name="BeanBlock46" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1760, 384)
+scale = Vector2(6, 8)
+
+[node name="BeanBlock47" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1664, 560)
+scale = Vector2(12, 3)
+
+[node name="BeanBlock48" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1536, 688)
+scale = Vector2(4, 5)
+
+[node name="BeanBlock49" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1728, 656)
+scale = Vector2(8, 3)
+
+[node name="BeanBlock50" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1792, 896)
+scale = Vector2(4, 12)
+
+[node name="BeanBlock51" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1408, 816)
+scale = Vector2(2, 3)
+
+[node name="BeanBlock56" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1376, 720)
+scale = Vector2(2, 3)
+
+[node name="BeanBlock57" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1200, 720)
+scale = Vector2(9, 3)
+
+[node name="BeanBlock58" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1120, 816)
+scale = Vector2(8, 3)
+
+[node name="BeanBlock59" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(848, 896)
+scale = Vector2(9, 4)
+
+[node name="BeanBlock60" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(672, 736)
+scale = Vector2(4, 6)
+
+[node name="BeanBlock61" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(864, 672)
+scale = Vector2(8, 2)
+
+[node name="BeanBlock52" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1520, 864)
+scale = Vector2(5, 2)
+
+[node name="BeanBlock53" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1376, 912)
+scale = Vector2(4, 3)
+
+[node name="BeanBlock54" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1568, 976)
+scale = Vector2(10, 5)
+
+[node name="BeanBlock55" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1312, 832)
+scale = Vector2(4, 4)
+
+[node name="BeanBlock40" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1296, 368)
+scale = Vector2(5, 7)
+
+[node name="BeanBlock11" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1248, 160)
+scale = Vector2(12, 6)
+
+[node name="BeanBlock19" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1536, 160)
+scale = Vector2(6, 6)
+
+[node name="BeanBlock20" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1776, 160)
+scale = Vector2(9, 6)
+
+[node name="BeanBlock12" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1296, -16)
+scale = Vector2(7, 5)
+
+[node name="BeanBlock13" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1424, -192)
+scale = Vector2(11, 6)
+
+[node name="BeanBlock16" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1584, -16)
+scale = Vector2(11, 5)
+
+[node name="BeanBlock14" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1136, -544)
+scale = Vector2(15, 16)
+
+[node name="BeanBlock15" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1424, -320)
+scale = Vector2(3, 2)
+
+[node name="BeanBlock17" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1632, -112)
+scale = Vector2(2, 1)
+
+[node name="BeanBlock21" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1936, 160)
+scale = Vector2(1, 2)
+
+[node name="BeanBlock22" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2000, 288)
+scale = Vector2(3, 4)
+
+[node name="BeanBlock23" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2064, 336)
+
+[node name="BeanBlock24" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2160, 464)
+scale = Vector2(3, 3)
+
+[node name="BeanBlock25" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2384, 560)
+scale = Vector2(3, 3)
+
+[node name="BeanBlock26" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2240, 640)
+scale = Vector2(2, 2)
+
+[node name="BeanBlock27" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(2096, 736)
+scale = Vector2(7, 4)
+
+[node name="BeanBlock18" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(1792, 32)
+scale = Vector2(2, 2)
+
+[node name="BeanBlock3" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-208, 16)
+scale = Vector2(7, 3)
+
+[node name="BeanBlock28" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-144, 240)
+scale = Vector2(3, 11)
+
+[node name="BeanBlock29" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-48, 304)
+scale = Vector2(3, 7)
+
+[node name="BeanBlock30" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(48, 320)
+scale = Vector2(3, 6)
+
+[node name="BeanBlock31" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(272, 320)
+scale = Vector2(5, 4)
+
+[node name="BeanBlock32" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(496, 320)
+scale = Vector2(9, 4)
+
+[node name="BeanBlock33" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(656, 336)
+
+[node name="BeanBlock34" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(640, 448)
+scale = Vector2(6, 6)
+
+[node name="BeanBlock62" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(464, 464)
+scale = Vector2(5, 5)
+
+[node name="BeanBlock63" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(448, 576)
+scale = Vector2(4, 2)
+
+[node name="BeanBlock64" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(240, 448)
+scale = Vector2(9, 4)
+
+[node name="BeanBlock65" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(336, 592)
+scale = Vector2(3, 5)
+
+[node name="BeanBlock66" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(448, 800)
+scale = Vector2(10, 4)
+
+[node name="BeanBlock68" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(0, 832)
+scale = Vector2(18, 4)
+
+[node name="BeanBlock69" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-368, 720)
+scale = Vector2(5, 11)
+
+[node name="BeanBlock70" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-288, 480)
+scale = Vector2(10, 4)
+
+[node name="BeanBlock71" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-272, 752)
+
+[node name="BeanBlock72" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-16, 480)
+scale = Vector2(7, 4)
+
+[node name="BeanBlock67" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(544, 704)
+scale = Vector2(4, 2)
+
+[node name="BeanBlock41" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(912, 480)
+scale = Vector2(11, 6)
+
+[node name="BeanBlock4" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-224, -80)
+scale = Vector2(2, 3)
+
+[node name="BeanBlock5" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-336, -80)
+scale = Vector2(5, 3)
+
+[node name="BeanBlock73" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-648, -112)
+scale = Vector2(0.5, 1)
+
+[node name="BeanBlock74" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-768, -80)
+scale = Vector2(7, 3)
+
+[node name="BeanBlock75" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-752, -160)
+scale = Vector2(2, 2)
+
+[node name="BeanBlock76" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-912, -96)
+scale = Vector2(2, 2)
+
+[node name="BeanBlock77" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1008, -128)
+scale = Vector2(4, 2)
+
+[node name="BeanBlock78" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1168, -144)
+scale = Vector2(6, 3)
+
+[node name="BeanBlock79" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1360, -160)
+scale = Vector2(6, 4)
+
+[node name="BeanBlock80" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1568, -192)
+scale = Vector2(7, 2)
+isVisible = false
+
+[node name="BeanBlock81" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1824, -240)
+scale = Vector2(3, 3)
+isVisible = false
+
+[node name="BeanBlock82" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1968, -288)
+scale = Vector2(6, 6)
+isVisible = false
+
+[node name="BeanBlock83" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-2224, -448)
+scale = Vector2(6, 2)
+
+[node name="BeanBlock84" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-2288, -512)
+scale = Vector2(2, 2)
+
+[node name="BeanBlock85" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-2368, -576)
+scale = Vector2(3, 4)
+
+[node name="BeanBlock86" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-2112, -656)
+
+[node name="BeanBlock87" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1984, -688)
+
+[node name="BeanBlock88" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1728, -688)
+
+[node name="BeanBlock89" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1504, -688)
+
+[node name="BeanBlock90" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1296, -688)
+
+[node name="BeanBlock91" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1104, -720)
+
+[node name="BeanBlock92" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-1008, -784)
+
+[node name="BeanBlock93" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-784, -720)
+
+[node name="BeanBlock94" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-624, -784)
+
+[node name="BeanBlock95" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-464, -720)
+
+[node name="BeanBlock96" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-336, -752)
+
+[node name="BeanBlock97" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-336, -752)
+
+[node name="BeanBlock98" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(-144, -720)
+
+[node name="BeanBlock99" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(16, -688)
+
+[node name="BeanBlock100" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(208, -656)
+
+[node name="BeanBlock101" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(352, -720)
+
+[node name="BeanBlock102" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(512, -720)
+
+[node name="BeanBlock103" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(672, -720)
+
+[node name="BeanBlock104" parent="Solids" instance=ExtResource("5_drr2j")]
+position = Vector2(800, -752)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="TrashCan" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(512, 64)
+
+[node name="TrashCan2" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(736, 64)
+
+[node name="TrashCan3" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(896, 64)
+
+[node name="TrashCan4" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(1408, 511)
+
+[node name="TrashCan5" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(1504, 480)
+
+[node name="TrashCan6" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(1568, 480)
+
+[node name="TrashCan7" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(1568, 800)
+
+[node name="TrashCan8" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(768, 800)
+
+[node name="TrashCan9" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(832, 800)
+
+[node name="TrashCan10" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(896, 800)
+
+[node name="TrashCan11" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(960, 800)
+
+[node name="TrashCan12" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(-224, 736)
+
+[node name="TrashCan13" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(-160, 736)
+
+[node name="TrashCan14" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(-96, 736)
+
+[node name="TrashCan15" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(-32, 736)
+
+[node name="TrashCan16" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(32, 736)
+
+[node name="TrashCan17" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(96, 736)
+
+[node name="TrashCan18" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(160, 736)
+
+[node name="TrashCan19" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(224, 736)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fanlt")
+autoplay = true

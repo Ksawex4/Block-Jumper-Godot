@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
-[ext_resource type="PackedScene" uid="uid://cxfyroaux4yi3" path="res://Scenes/fly_thing.tscn" id="7_3rmdf"]
+[ext_resource type="PackedScene" uid="uid://cxfyroaux4yi3" path="res://Scenes/Objects/fly_thing.tscn" id="7_3rmdf"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
@@ -33,19 +33,17 @@ position = Vector2(76, 140)
 
 [node name="BeanBlock" parent="Solids" instance=ExtResource("1_ycph5")]
 position = Vector2(278, 282)
-Size = Vector2(550, 32)
+scale = Vector2(17, 1)
 
 [node name="BeanBlock2" parent="Solids" instance=ExtResource("1_ycph5")]
 position = Vector2(250, 137)
-Size = Vector2(140, 32)
+scale = Vector2(6, 1)
 
 [node name="BeanBlock3" parent="Solids" instance=ExtResource("1_ycph5")]
-position = Vector2(366, 250)
-Size = Vector2(32, 32)
+position = Vector2(398, 250)
 
 [node name="BeanBlock4" parent="Solids" instance=ExtResource("1_ycph5")]
 position = Vector2(22, 250)
-Size = Vector2(32, 32)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -110,21 +108,22 @@ position = Vector2(393, 30)
 position = Vector2(126, 46)
 
 [node name="TrashCan" parent="Interactables" instance=ExtResource("9_f2n0o")]
-position = Vector2(261, 241)
+position = Vector2(257, 234)
 
 [node name="TrashCan2" parent="Interactables" instance=ExtResource("9_f2n0o")]
-position = Vector2(322, 241)
+position = Vector2(322, 234)
 
 [node name="TrashCan3" parent="Interactables" instance=ExtResource("9_f2n0o")]
-position = Vector2(204, 241)
+position = Vector2(191, 234)
 
 [node name="TrashCan4" parent="Interactables" instance=ExtResource("9_f2n0o")]
-position = Vector2(149, 241)
+position = Vector2(128, 234)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8h618")
 autoplay = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 navigation_polygon = SubResource("NavigationPolygon_wv2xt")

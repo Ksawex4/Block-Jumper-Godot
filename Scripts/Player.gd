@@ -16,12 +16,16 @@ var stickSpawnCooldown := 0.0
 var DefaultHpBarLenght
 
 func _ready() -> void:
+	$SolidsCollision.disabled = true
 	hasLeftAnimation = $AnimatedSprite2D.sprite_frames.has_animation("walkLeft")
 	$AnimatedSprite2D.play("default")
 	DefaultHpBarLenght = $Control/HP.size.x
 	updateBar()
 	if Global.get(stick):
 		spawnStick()
+	for x in range(5):
+		await get_tree().physics_frame
+	$SolidsCollision.disabled = false
 
 func _physics_process(delta: float) -> void:
 	if hasLeftAnimation:

@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+@export var isVisible = true
+
 func _ready() -> void:
+	visible = isVisible
 	var scaleMultiplier = scale
 	scale = Vector2(1.0, 1.0)
 	$NinePatchRect/AnimationPlayer.play("BeanBlock")
@@ -14,4 +17,3 @@ func _ready() -> void:
 	$NinePatchRect.anchor_bottom = 0
 	$CollisionShape2D.position = Vector2.ZERO
 	$NinePatchRect.position = -$CollisionShape2D.shape.size / 2
-	$CollisionShape2D.disabled = false
