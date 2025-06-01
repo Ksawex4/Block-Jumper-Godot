@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bfqojctd5pm0c"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_yhxw7"]
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="3_trj04"]
 [ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_16hvj"]

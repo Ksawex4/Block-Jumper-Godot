@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_imhd6"]
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_fanlt"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="3_44u3g"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="4_6yt8x"]
+[ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="4_6yt8x"]
 [ext_resource type="PackedScene" uid="uid://d35pybk0uw3rv" path="res://Scenes/Objects/bean_block.tscn" id="5_drr2j"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="6_44u3g"]
 [ext_resource type="AudioStream" uid="uid://6w3wleca624c" path="res://Songs/souTrash.wav" id="6_fanlt"]

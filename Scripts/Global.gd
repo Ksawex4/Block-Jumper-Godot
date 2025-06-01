@@ -14,6 +14,7 @@ var Beans := 0
 var FollowWho := "Fency"
 var spawn := 0
 var playerAchievements := []
+var shownAchievements := []
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://ckfel1j514sxw" path="res://Scenes/Objects/bean.tscn" id="6_548gw"]
 [ext_resource type="PackedScene" uid="uid://cxfyroaux4yi3" path="res://Scenes/Objects/fly_thing.tscn" id="7_3rmdf"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
+[ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
 
