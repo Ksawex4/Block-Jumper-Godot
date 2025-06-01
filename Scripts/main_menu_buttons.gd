@@ -1,6 +1,7 @@
 extends Control
 
 func _on_quit_button_pressed() -> void:
+	Global.saveAchievements()
 	get_tree().quit()
 
 func _on_new_button_pressed() -> void:

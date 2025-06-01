@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 			break
 
 func showAchievement(ach):
+	Global.saveAchievements()
 	hiddden = false
 	ppos = Vector2(-355, -200)
 	$AchievementsLabel.text = ach

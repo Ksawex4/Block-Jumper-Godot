@@ -16,6 +16,10 @@ var spawn := 0
 var playerAchievements := []
 var shownAchievements := []
 
+func _ready():
+	if FileAccess.file_exists("user://achievements"):
+		loadAchievements()
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):
 		QuitToMenu()
@@ -34,3 +38,22 @@ func QuitToMenu():
 	else:
 		get_tree().current_scene.get_node("Fency").position = Vector2(277, 163)
 		
+
+func loadAchievements():
+	var file = FileAccess.open("user://achievements", FileAccess.READ)
+	var jsonString = file.get_as_text()
+	var data = JSON.parse_string(jsonString)
+	if data is Dictionary:
+		playerAchievements = data.get("achievements")
+		shownAchievements = data.get("shownAchievements")
+	file.close()
+
+func saveAchievements():
+	var struct = {
+		"achievements": Global.playerAchievements,
+		"shownAchievements": Global.shownAchievements
+	}
+	var file = FileAccess.open("user://achievements", FileAccess.WRITE)
+	var jsonString = JSON.stringify(struct)
+	file.store_string(jsonString)
+	file.close()
