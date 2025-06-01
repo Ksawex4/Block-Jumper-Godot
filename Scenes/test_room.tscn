@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=13 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="7_hjqbe"]
 [ext_resource type="AudioStream" uid="uid://lst2ll0xq7yu" path="res://Songs/souZworkaSong.wav" id="8_8h618"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="9_f2n0o"]
+[ext_resource type="PackedScene" uid="uid://dbyvbltpv5wb1" path="res://Scenes/Objects/save_point.tscn" id="10_wv2xt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wv2xt"]
 vertices = PackedVector2Array(560.969, 310, 9, 310, 8.99219, 10.9766, 560.031, 10.0078)
@@ -118,6 +119,9 @@ position = Vector2(191, 234)
 
 [node name="TrashCan4" parent="Interactables" instance=ExtResource("9_f2n0o")]
 position = Vector2(128, 234)
+
+[node name="SavePoint" parent="Interactables" instance=ExtResource("10_wv2xt")]
+position = Vector2(227, 105)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8h618")

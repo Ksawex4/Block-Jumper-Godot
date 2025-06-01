@@ -1,5 +1,8 @@
 extends Node
 
+var loadPositionX = 0.0
+var loadPositionY = 0.0
+var loadPos = false 
 var Gravity := 10
 var FencyHP := 10
 var ToastyHP := 10
@@ -17,7 +20,7 @@ var playerAchievements := []
 var shownAchievements := []
 
 func _ready():
-	if FileAccess.file_exists("user://achievements"):
+	if FileAccess.file_exists("user://achievements.bj"):
 		loadAchievements()
 
 func _process(delta: float) -> void:
@@ -40,7 +43,7 @@ func QuitToMenu():
 		
 
 func loadAchievements():
-	var file = FileAccess.open("user://achievements", FileAccess.READ)
+	var file = FileAccess.open("user://achievements.bj", FileAccess.READ)
 	var jsonString = file.get_as_text()
 	var data = JSON.parse_string(jsonString)
 	if data is Dictionary:
@@ -53,7 +56,23 @@ func saveAchievements():
 		"achievements": Global.playerAchievements,
 		"shownAchievements": Global.shownAchievements
 	}
-	var file = FileAccess.open("user://achievements", FileAccess.WRITE)
+	var file = FileAccess.open("user://achievements.bj", FileAccess.WRITE)
+	var jsonString = JSON.stringify(struct)
+	file.store_string(jsonString)
+	file.close()
+
+func saveGame(pos):
+	saveAchievements()
+	var struct = {
+		"X": pos.x,
+		"Y": pos.y,
+		"HPs": [FencyHP, ToastyHP, PanLoduwkaHP],
+		"MaxHPs": [FencyMaxHP, ToastyMaxHP, PanLoduwkaMaxHP],
+		"Scene": get_tree().current_scene.scene_file_path,
+		"Sticks": [FStick, TStick, PLStick],
+		"Beans": Beans
+	}
+	var file = FileAccess.open("user://save.bj", FileAccess.WRITE)
 	var jsonString = JSON.stringify(struct)
 	file.store_string(jsonString)
 	file.close()

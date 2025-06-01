@@ -16,6 +16,11 @@ var stickSpawnCooldown := 0.0
 var DefaultHpBarLenght
 
 func _ready() -> void:
+	if Global.loadPos:
+		global_position = Vector2(Global.loadPositionX, Global.loadPositionY)
+		print(str(Global.loadPositionX))
+		print(str(Global.loadPositionY))
+		print(str(global_position))
 	$SolidsCollision.disabled = true
 	hasLeftAnimation = $AnimatedSprite2D.sprite_frames.has_animation("walkLeft")
 	$AnimatedSprite2D.play("default")
@@ -26,6 +31,7 @@ func _ready() -> void:
 	for x in range(5):
 		await get_tree().physics_frame
 	$SolidsCollision.disabled = false
+	Global.loadPos = false
 
 func _physics_process(delta: float) -> void:
 	if hasLeftAnimation:

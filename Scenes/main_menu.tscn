@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bfqojctd5pm0c"]
+[gd_scene load_steps=24 format=3 uid="uid://bfqojctd5pm0c"]
 
 [ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_yhxw7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_vr1f0"]
 [ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_t1dhk"]
 [ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_5egv6"]
+[ext_resource type="Texture2D" uid="uid://dgk4i3fg064ig" path="res://Textures/Buttons/Load.png" id="7_16hvj"]
 [ext_resource type="Texture2D" uid="uid://canx0jux42rum" path="res://Textures/Buttons/Achievements.png" id="7_yhxw7"]
 [ext_resource type="Script" uid="uid://drfgp0gner7jx" path="res://Scripts/AchievementsLabel.gd" id="9_trj04"]
 
@@ -77,10 +78,10 @@ icon = ExtResource("5_vr1f0")
 [node name="NewButton" type="Button" parent="Buttons"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -24.0
-offset_top = 128.0
-offset_right = 80.0
-offset_bottom = 168.0
+offset_left = -26.0
+offset_top = 167.0
+offset_right = 78.0
+offset_bottom = 207.0
 theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8b1if")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_kipn8")
@@ -88,13 +89,27 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ib1yv")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rfxh6")
 icon = ExtResource("6_t1dhk")
 
+[node name="LoadButton" type="Button" parent="Buttons"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -24.0
+offset_top = 120.0
+offset_right = 80.0
+offset_bottom = 160.0
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8b1if")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kipn8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ib1yv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfxh6")
+icon = ExtResource("7_16hvj")
+
 [node name="AchievementsButton" type="Button" parent="Buttons"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -52.0
-offset_top = 170.0
-offset_right = 130.0
-offset_bottom = 213.0
+offset_left = -54.0
+offset_top = 209.0
+offset_right = 128.0
+offset_bottom = 252.0
 theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_trj04")
@@ -144,5 +159,6 @@ autostart = true
 
 [connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/NewButton" to="Buttons" method="_on_new_button_pressed"]
+[connection signal="pressed" from="Buttons/LoadButton" to="Buttons" method="_on_load_button_pressed"]
 [connection signal="pressed" from="Buttons/AchievementsButton" to="Buttons" method="_on_achievements_button_pressed"]
 [connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_timer_timeout"]
