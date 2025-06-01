@@ -486,6 +486,10 @@ position = Vector2(160, 736)
 [node name="TrashCan19" parent="Interactables" instance=ExtResource("6_44u3g")]
 position = Vector2(224, 736)
 
+[node name="TrashCan20" parent="Interactables" instance=ExtResource("6_44u3g")]
+position = Vector2(-1296, -256)
+isInfinite = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fanlt")
 autoplay = true
