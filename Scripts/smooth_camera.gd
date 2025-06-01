@@ -4,7 +4,7 @@ var achievement = ""
 var ppos = Vector2(-355, 200)
 var hiddden = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var scene = get_tree().current_scene
 	var node = scene.get_node_or_null(Global.FollowWho)
 	

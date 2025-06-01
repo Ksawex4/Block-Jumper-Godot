@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var normalText := "[color=yellow]Your current achievements ACH/4:[/color]"
+var normalText := "[color=yellow]Your current achievements ACH/5:[/color]"
 
 func _on_timer_timeout() -> void:
 	text = normalText.replace("ACH", str(Global.playerAchievements.size()))

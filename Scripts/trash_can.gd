@@ -7,13 +7,13 @@ func _ready() -> void:
 	if isInfinite:
 		$Sprite2D.texture = load("res://Textures/TrashCan/InfiniteTrashCan.png")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	isColliding = true
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	isColliding = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if isColliding && Input.is_action_just_pressed("Interract"):
 		spawnSpamGuy()
 		if !isInfinite:

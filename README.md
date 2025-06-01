@@ -7,3 +7,4 @@
 ## Credits
 
 - “BadlyDrawnSpamton” is fan art based on Spamton from Deltarune by Toby Fox.
+- "BadlyDrawnQueen" is fan art based on Queen from Deltarune by Toby Fox too.

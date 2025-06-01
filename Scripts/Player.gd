@@ -33,7 +33,7 @@ func _ready() -> void:
 	$SolidsCollision.disabled = false
 	Global.loadPos = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if hasLeftAnimation:
 		if velocity.x > 0 && $AnimatedSprite2D.animation != "walkRight":
 			$AnimatedSprite2D.play("walkRight")
@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("walkLeft")
 		elif velocity.x == 0 && $AnimatedSprite2D.animation != "default":
 			$AnimatedSprite2D.play("default")
-	var scene = get_tree().current_scene
 	if Global.get(WhosHp) <= 0:
 		queue_free()
 	

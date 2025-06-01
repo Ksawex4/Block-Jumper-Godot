@@ -26,7 +26,7 @@ func _ready() -> void:
 		$Sprite2D.texture = load("res://Textures/Spamguys/Ksawton.png")
 		speed = 100
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity
 	velocity.x = speed * direction

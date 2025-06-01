@@ -7,7 +7,7 @@ func _ready() -> void:
 	if !Global.playerAchievements.has("[img]res://Textures/Achievements/Stick.png[/img]"):
 		Global.playerAchievements.append("[img]res://Textures/Achievements/Stick.png[/img]")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var scene = get_tree().current_scene
 	if scene.has_node(who):
 		position = scene.get_node(who).position

@@ -18,12 +18,13 @@ var FollowWho := "Fency"
 var spawn := 0
 var playerAchievements := []
 var shownAchievements := []
+var gotChip = false
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):
 		loadAchievements()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Quit"):
 		QuitToMenu()
 	

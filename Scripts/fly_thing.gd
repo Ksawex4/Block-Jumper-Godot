@@ -9,7 +9,7 @@ const movementSpeed = 50
 func _ready() -> void:
 	$NavigationAgent2D.target_position = goal.global_position
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !FileAccess.file_exists("user://sól"):
 		queue_free()
 	
