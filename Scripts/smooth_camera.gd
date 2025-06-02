@@ -3,14 +3,18 @@ extends Camera2D
 var achievement = ""
 var ppos = Vector2(-355, 200)
 var hiddden = true
+var MaxSmoothSpeed = 1000
 
 func _process(_delta: float) -> void:
 	var scene = get_tree().current_scene
 	var node = scene.get_node_or_null(Global.FollowWho)
 	
 	if node != null:
-		position.x = lerp(position.x, node.position.x, 0.1)
-		position.y = lerp(position.y, node.position.y, 0.1)
+		if node.velocity.x > MaxSmoothSpeed or node.velocity.y > MaxSmoothSpeed:
+			position = node.position
+		else:
+			position.x = lerp(position.x, node.position.x, 0.1)
+			position.y = lerp(position.y, node.position.y, 0.1)
 	
 	if Input.is_action_just_pressed("CamFency") && scene.has_node("Fency"):
 		Global.FollowWho = "Fency"

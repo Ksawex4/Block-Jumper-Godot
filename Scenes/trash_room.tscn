@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjqsvvt2otbkx"]
+[gd_scene load_steps=9 format=3 uid="uid://bjqsvvt2otbkx"]
 
+[ext_resource type="PackedScene" uid="uid://o6chlabw2rnh" path="res://Scenes/Objects/background.tscn" id="1_6yt8x"]
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_imhd6"]
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_fanlt"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="3_44u3g"]
@@ -9,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://6w3wleca624c" path="res://Songs/souTrash.wav" id="6_fanlt"]
 
 [node name="TrashRoom" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_6yt8x")]
+texture = "res://Textures/Backgrounds/BackgroundTrash.png"
+Scale = Vector2(6, 6)
 
 [node name="Fency" parent="." instance=ExtResource("1_imhd6")]
 position = Vector2(-32, -64)

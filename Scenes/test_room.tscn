@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=16 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
+[ext_resource type="PackedScene" uid="uid://o6chlabw2rnh" path="res://Scenes/Objects/background.tscn" id="1_fgfdw"]
 [ext_resource type="PackedScene" uid="uid://d35pybk0uw3rv" path="res://Scenes/Objects/bean_block.tscn" id="1_ycph5"]
 [ext_resource type="PackedScene" uid="uid://hhepu0udy5hv" path="res://Scenes/Objects/toasty.tscn" id="2_3tvqv"]
 [ext_resource type="PackedScene" uid="uid://benxxxiyfuc42" path="res://Scenes/Objects/kill_block.tscn" id="5_3tvqv"]
@@ -20,6 +21,8 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 1, -1, 320, 571, 320, 570, 0)])
 
 [node name="TestRoom" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_fgfdw")]
 
 [node name="Fency" parent="." instance=ExtResource("1_6idp7")]
 position = Vector2(105, 199)

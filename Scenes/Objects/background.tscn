@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://o6chlabw2rnh"]
+
+[ext_resource type="Script" uid="uid://8reenn0u5nvx" path="res://Scripts/background.gd" id="1_1c462"]
+[ext_resource type="Texture2D" uid="uid://cne168w0g5q4q" path="res://Textures/Backgrounds/Background1.png" id="1_mpewa"]
+
+[node name="Background" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_1c462")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_offset = Vector2(5, 8)
+motion_mirroring = Vector2(800, 486)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_mpewa")
+centered = false

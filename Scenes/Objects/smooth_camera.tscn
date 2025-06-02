@@ -4,6 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://bbu42d44bjyi7" path="res://SoundEffects/souAch.wav" id="2_y6m4u"]
 
 [node name="SmoothCamera" type="Camera2D"]
+limit_left = -2147483648
+limit_top = -2147483648
+limit_right = 2147483647
+limit_bottom = 2147483647
 script = ExtResource("1_8ba7x")
 
 [node name="AchievementsLabel" type="RichTextLabel" parent="."]
