@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djadu6syn1m4v"
-path="res://.godot/imported/BeanBlockF3.png-edc1fddee3afd4adae57004ca97136b3.ctex"
+path="res://.godot/imported/BeanBlockF3.png-c97a48a846b6a97e1096a6358e75c514.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/BeanBlock/BeanBlockF3.png"
-dest_files=["res://.godot/imported/BeanBlockF3.png-edc1fddee3afd4adae57004ca97136b3.ctex"]
+source_file="res://Textures/Blocks/BeanBlockF3.png"
+dest_files=["res://.godot/imported/BeanBlockF3.png-c97a48a846b6a97e1096a6358e75c514.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwy2euwwaaks1"
-path="res://.godot/imported/BeanBlockF1.png-8320d0d8067bc30127cf1e5be369298e.ctex"
+uid="uid://cy76oylpquvdd"
+path="res://.godot/imported/BeanBlockF2.png-93005a45ca9b4ae7c027c3dcdbec802c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/BeanBlock/BeanBlockF1.png"
-dest_files=["res://.godot/imported/BeanBlockF1.png-8320d0d8067bc30127cf1e5be369298e.ctex"]
+source_file="res://Textures/Blocks/BeanBlockF2.png"
+dest_files=["res://.godot/imported/BeanBlockF2.png-93005a45ca9b4ae7c027c3dcdbec802c.ctex"]
 
 [params]
 
