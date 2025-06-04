@@ -19,6 +19,10 @@ var spawn := 0
 var playerAchievements := []
 var shownAchievements := []
 var gotChip = false
+var chat = ""
+var QueuedMessages = []
+var IsTypingInChat = false
+var ChatInstantSend = 512
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):

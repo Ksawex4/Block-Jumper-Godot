@@ -24,9 +24,6 @@ position = Vector2(-32, -96)
 [node name="PanLoduwka" parent="." instance=ExtResource("3_44u3g")]
 position = Vector2(-32, -128)
 
-[node name="SmoothCamera" parent="." instance=ExtResource("4_6yt8x")]
-position = Vector2(-48, -192)
-
 [node name="Solids" type="Node2D" parent="."]
 
 [node name="BeanBlock" parent="Solids" instance=ExtResource("5_drr2j")]
@@ -498,3 +495,6 @@ isInfinite = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fanlt")
 autoplay = true
+
+[node name="SmoothCamera" parent="." instance=ExtResource("4_6yt8x")]
+position = Vector2(-48, -192)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqgbiq10py5uo"]
+[gd_scene load_steps=4 format=3 uid="uid://dqgbiq10py5uo"]
 
 [ext_resource type="Script" uid="uid://b0kbkj5q3qn08" path="res://Scripts/smooth_camera.gd" id="1_8ba7x"]
 [ext_resource type="AudioStream" uid="uid://bbu42d44bjyi7" path="res://SoundEffects/souAch.wav" id="2_y6m4u"]
+[ext_resource type="Script" uid="uid://bcvx8el1c0ucf" path="res://Scripts/chat.gd" id="3_5n427"]
 
 [node name="SmoothCamera" type="Camera2D"]
 limit_left = -2147483648
@@ -20,3 +21,30 @@ bbcode_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_y6m4u")
+
+[node name="ChatControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_5n427")
+
+[node name="Input" type="LineEdit" parent="ChatControl"]
+layout_mode = 0
+offset_left = -355.0
+offset_top = 169.0
+offset_right = -276.0
+offset_bottom = 200.0
+expand_to_text_length = true
+
+[node name="Chat" type="RichTextLabel" parent="ChatControl"]
+layout_mode = 0
+offset_left = -355.0
+offset_top = -69.0
+offset_right = -106.0
+offset_bottom = 168.0
+scroll_following = true
+vertical_alignment = 2
+
+[connection signal="editing_toggled" from="ChatControl/Input" to="ChatControl" method="_on_input_editing_toggled"]
+[connection signal="text_submitted" from="ChatControl/Input" to="ChatControl" method="_on_input_text_submitted"]
