@@ -23,6 +23,7 @@ var chat = ""
 var QueuedMessages = []
 var IsTypingInChat = false
 var ChatInstantSend = 512
+var SolidBoxes = false
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btuf7ucts5n8c"]
+[gd_scene load_steps=11 format=3 uid="uid://btuf7ucts5n8c"]
 
 [ext_resource type="Script" uid="uid://dgu2f0etuscje" path="res://Scripts/Player.gd" id="1_j1hk5"]
 [ext_resource type="Texture2D" uid="uid://cbdmgya1waspc" path="res://Textures/Fency/sprFency.png" id="2_mfl0u"]
@@ -43,6 +43,9 @@ animations = [{
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r12lk"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfl0u"]
 size = Vector2(32, 32)
 
 [node name="Fency" type="CharacterBody2D"]
@@ -101,5 +104,13 @@ offset_top = -6.0
 offset_right = 29.0
 offset_bottom = 17.0
 text = "10"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 0
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_mfl0u")
+disabled = true
+one_way_collision = true
 
 [connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]

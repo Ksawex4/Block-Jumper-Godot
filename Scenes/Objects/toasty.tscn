@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://hhepu0udy5hv"]
+[gd_scene load_steps=6 format=3 uid="uid://hhepu0udy5hv"]
 
 [ext_resource type="Texture2D" uid="uid://dmktkgr7uu4dm" path="res://Textures/Toasty/Toasty.png" id="1_g3tna"]
 [ext_resource type="Script" uid="uid://dgu2f0etuscje" path="res://Scripts/Player.gd" id="1_kect0"]
@@ -15,6 +15,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12wjm"]
+size = Vector2(32, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kect0"]
 size = Vector2(32, 29)
 
 [node name="Toasty" type="CharacterBody2D"]
@@ -37,6 +40,15 @@ sprite_frames = SubResource("SpriteFrames_kect0")
 [node name="SolidsCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_12wjm")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 0
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_kect0")
+disabled = true
+one_way_collision = true
 
 [node name="HitBoxArea" type="Area2D" parent="."]
 collision_layer = 0

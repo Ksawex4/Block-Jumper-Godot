@@ -34,6 +34,10 @@ func _ready() -> void:
 	Global.loadPos = false
 
 func _physics_process(_delta: float) -> void:
+	if Global.SolidBoxes:
+		$CharacterBody2D/PlayerCollision.disabled = false
+	else:
+		$CharacterBody2D/PlayerCollision.disabled = true
 	if hasLeftAnimation:
 		if velocity.x > 0 && $AnimatedSprite2D.animation != "walkRight":
 			$AnimatedSprite2D.play("walkRight")

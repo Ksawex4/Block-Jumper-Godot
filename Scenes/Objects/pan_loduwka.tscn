@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxnvloc13qu04"]
+[gd_scene load_steps=21 format=3 uid="uid://cxnvloc13qu04"]
 
 [ext_resource type="Script" uid="uid://dgu2f0etuscje" path="res://Scripts/Player.gd" id="1_32lqj"]
 [ext_resource type="Texture2D" uid="uid://bjto1qb2vc6de" path="res://Textures/PanLoduwka/sprPanLoduwka.png" id="2_xiwxr"]
@@ -113,6 +113,9 @@ size = Vector2(27, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha7ox"]
 size = Vector2(27, 42)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwxr"]
+size = Vector2(27, 42)
+
 [node name="PanLoduwka" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -175,5 +178,14 @@ offset_top = -6.0
 offset_right = 29.0
 offset_bottom = 17.0
 text = "10"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 0
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_xiwxr")
+disabled = true
+one_way_collision = true
 
 [connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]
