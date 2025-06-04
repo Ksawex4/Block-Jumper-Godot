@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di2dwbxolcdpe"]
+[gd_scene load_steps=17 format=3 uid="uid://di2dwbxolcdpe"]
 
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_6idp7"]
 [ext_resource type="PackedScene" uid="uid://cxnvloc13qu04" path="res://Scenes/Objects/pan_loduwka.tscn" id="1_afs4w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dbyvbltpv5wb1" path="res://Scenes/Objects/save_point.tscn" id="10_wv2xt"]
 [ext_resource type="PackedScene" uid="uid://c53lrc8watfr1" path="res://Scenes/Objects/badly_drawn_queen.tscn" id="11_q5jsk"]
 [ext_resource type="PackedScene" uid="uid://cftbqw8vbfh6m" path="res://Scenes/Objects/chip.tscn" id="12_fgfdw"]
+[ext_resource type="PackedScene" uid="uid://bw4vxw25g202k" path="res://Scenes/Objects/player_chip.tscn" id="13_8fp34"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wv2xt"]
 vertices = PackedVector2Array(560.969, 310, 9, 310, 8.99219, 10.9766, 560.031, 10.0078)
@@ -37,6 +38,10 @@ position = Vector2(76, 140)
 
 [node name="BeanBlock" parent="Solids" instance=ExtResource("1_ycph5")]
 position = Vector2(278, 282)
+scale = Vector2(17, 1)
+
+[node name="BeanBlock10" parent="Solids" instance=ExtResource("1_ycph5")]
+position = Vector2(-347, 362)
 scale = Vector2(17, 1)
 
 [node name="BeanBlock2" parent="Solids" instance=ExtResource("1_ycph5")]
@@ -151,6 +156,17 @@ position = Vector2(1191, 218)
 
 [node name="Chip" parent="Interactables" instance=ExtResource("12_fgfdw")]
 position = Vector2(1707, 171)
+
+[node name="PlayerChip" parent="Interactables" instance=ExtResource("13_8fp34")]
+position = Vector2(-517, 274)
+
+[node name="PlayerChip2" parent="Interactables" instance=ExtResource("13_8fp34")]
+position = Vector2(-374, 273)
+player = "PanLoduwka"
+
+[node name="PlayerChip3" parent="Interactables" instance=ExtResource("13_8fp34")]
+position = Vector2(-185, 266)
+player = "Toasty"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8h618")

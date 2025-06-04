@@ -57,10 +57,11 @@ func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
 	
-	if Input.is_action_pressed(jumpKey) && is_on_floor():
+	if Input.is_action_pressed(jumpKey) && is_on_floor() && !Global.IsTypingInChat:
 		velocity.y = -jumpHeight
 	
-	velocity.x = speed * Input.get_axis(leftKey, rightKey)
+	if !Global.IsTypingInChat:
+		velocity.x = speed * Input.get_axis(leftKey, rightKey)
 	
 	move_and_slide()
 
