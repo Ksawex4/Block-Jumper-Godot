@@ -40,3 +40,7 @@ func _on_load_button_pressed() -> void:
 			Global.loadPos = true
 		file.close()
 		get_tree().change_scene_to_file(scene)
+
+
+func _on_settings_button_pressed() -> void:
+	get_parent().get_node("Fency").position = Vector2(829, 731)

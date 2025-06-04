@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bfqojctd5pm0c"]
+[gd_scene load_steps=26 format=3 uid="uid://bfqojctd5pm0c"]
 
 [ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_yhxw7"]
@@ -6,10 +6,12 @@
 [ext_resource type="Script" uid="uid://c4dd454iwc7xq" path="res://Scripts/main_menu_buttons.gd" id="4_16hvj"]
 [ext_resource type="Texture2D" uid="uid://cl13uo5msqysn" path="res://Textures/Buttons/Quit.png" id="5_vr1f0"]
 [ext_resource type="Texture2D" uid="uid://cnwn7thqgnbbf" path="res://Textures/Buttons/New.png" id="6_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://c4uviaf4mcmyk" path="res://Textures/Buttons/Settings.png" id="6_vr1f0"]
 [ext_resource type="AudioStream" uid="uid://bg6ur3qxt335d" path="res://Songs/souMainMenu.wav" id="7_5egv6"]
 [ext_resource type="Texture2D" uid="uid://dgk4i3fg064ig" path="res://Textures/Buttons/Load.png" id="7_16hvj"]
 [ext_resource type="Texture2D" uid="uid://canx0jux42rum" path="res://Textures/Buttons/Achievements.png" id="7_yhxw7"]
 [ext_resource type="Script" uid="uid://drfgp0gner7jx" path="res://Scripts/AchievementsLabel.gd" id="9_trj04"]
+[ext_resource type="Script" uid="uid://2vw7dihmpvey" path="res://Scripts/settings.gd" id="12_t1dhk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_salsw"]
 
@@ -64,16 +66,30 @@ script = ExtResource("4_16hvj")
 [node name="QuitButton" type="Button" parent="Buttons"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -19.0
-offset_top = 253.0
-offset_right = 85.0
-offset_bottom = 293.0
+offset_left = -24.0
+offset_top = 312.0
+offset_right = 80.0
+offset_bottom = 352.0
 theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_salsw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_heolw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_057lb")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6xyvr")
 icon = ExtResource("5_vr1f0")
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -41.0
+offset_top = 264.0
+offset_right = 102.0
+offset_bottom = 304.0
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_salsw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_heolw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_057lb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6xyvr")
+icon = ExtResource("6_vr1f0")
 
 [node name="NewButton" type="Button" parent="Buttons"]
 texture_filter = 1
@@ -139,6 +155,17 @@ shape = SubResource("RectangleShape2D_y1wm0")
 position = Vector2(308, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(548, 569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(254, 162)
+shape = SubResource("RectangleShape2D_y1wm0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(308, 163)
+shape = SubResource("RectangleShape2D_y1wm0")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5egv6")
 autoplay = true
@@ -157,8 +184,144 @@ script = ExtResource("9_trj04")
 [node name="Timer" type="Timer" parent="RichTextLabel"]
 autostart = true
 
+[node name="Settings" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 543.0
+offset_top = 565.0
+offset_right = 1108.0
+offset_bottom = 909.0
+script = ExtResource("12_t1dhk")
+
+[node name="INFO" type="Label" parent="Settings"]
+visible = false
+layout_mode = 0
+offset_left = 230.0
+offset_top = 153.0
+offset_right = 338.0
+offset_bottom = 176.0
+text = "Press Any Key"
+
+[node name="FLeft" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -32.0
+offset_right = 53.0
+offset_bottom = -1.0
+text = "FencyLeft: "
+
+[node name="FRight" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 2.0
+offset_right = 61.0
+offset_bottom = 33.0
+text = "FencyRight: KEY"
+
+[node name="FJump" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 37.0
+offset_right = 61.0
+offset_bottom = 68.0
+text = "FencyJump: KEY"
+
+[node name="PLLeft" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 71.0
+offset_right = 53.0
+offset_bottom = 102.0
+text = "PanLoduwkaLeft: KEY"
+
+[node name="PLRight" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 105.0
+offset_right = 61.0
+offset_bottom = 136.0
+text = "PanLoduwkaRight: KEY"
+
+[node name="PLJump" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 140.0
+offset_right = 61.0
+offset_bottom = 171.0
+text = "PanLoduwkaJump: KEY"
+
+[node name="TLeft" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 176.0
+offset_right = 53.0
+offset_bottom = 207.0
+text = "ToastyLeft: KEY"
+
+[node name="TRight" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 210.0
+offset_right = 61.0
+offset_bottom = 241.0
+text = "ToastyRight: KEY"
+
+[node name="TJump" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 245.0
+offset_right = 61.0
+offset_bottom = 276.0
+text = "ToastyJump: KEY"
+
+[node name="Interract" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 280.0
+offset_right = 61.0
+offset_bottom = 311.0
+text = "Interract: KEY"
+
+[node name="CamF" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 219.0
+offset_right = 280.0
+offset_bottom = 250.0
+text = "Interract: KEY"
+
+[node name="CamPL" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 249.0
+offset_right = 278.0
+offset_bottom = 280.0
+text = "Interract: KEY"
+
+[node name="CamT" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 279.0
+offset_right = 276.0
+offset_bottom = 310.0
+text = "Interract: KEY"
+
 [connection signal="pressed" from="Buttons/QuitButton" to="Buttons" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="Buttons" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Buttons/NewButton" to="Buttons" method="_on_new_button_pressed"]
 [connection signal="pressed" from="Buttons/LoadButton" to="Buttons" method="_on_load_button_pressed"]
 [connection signal="pressed" from="Buttons/AchievementsButton" to="Buttons" method="_on_achievements_button_pressed"]
 [connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_timer_timeout"]
+[connection signal="pressed" from="Settings/FLeft" to="Settings" method="_on_f_left_pressed"]
+[connection signal="pressed" from="Settings/FRight" to="Settings" method="_on_f_right_pressed"]
+[connection signal="pressed" from="Settings/FJump" to="Settings" method="_on_f_jump_pressed"]
+[connection signal="pressed" from="Settings/PLLeft" to="Settings" method="_on_pl_left_pressed"]
+[connection signal="pressed" from="Settings/PLRight" to="Settings" method="_on_pl_right_pressed"]
+[connection signal="pressed" from="Settings/PLJump" to="Settings" method="_on_pl_jump_pressed"]
+[connection signal="pressed" from="Settings/TLeft" to="Settings" method="_on_t_left_pressed"]
+[connection signal="pressed" from="Settings/TRight" to="Settings" method="_on_t_right_pressed"]
+[connection signal="pressed" from="Settings/TJump" to="Settings" method="_on_t_jump_pressed"]
+[connection signal="pressed" from="Settings/Interract" to="Settings" method="_on_interract_pressed"]
+[connection signal="pressed" from="Settings/CamF" to="Settings" method="_on_cam_f_pressed"]
+[connection signal="pressed" from="Settings/CamPL" to="Settings" method="_on_cam_pl_pressed"]
+[connection signal="pressed" from="Settings/CamT" to="Settings" method="_on_cam_t_pressed"]

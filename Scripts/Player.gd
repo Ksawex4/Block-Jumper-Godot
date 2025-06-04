@@ -14,6 +14,9 @@ var hasLeftAnimation
 var stickInstance
 var stickSpawnCooldown := 0.0
 var DefaultHpBarLenght
+var left = KEY_A
+var right = KEY_D
+var jump = KEY_W
 
 func _ready() -> void:
 	if Global.loadPos:
@@ -30,10 +33,12 @@ func _ready() -> void:
 		spawnStick()
 	for x in range(5):
 		await get_tree().physics_frame
+	updateKeys()
 	$SolidsCollision.disabled = false
 	Global.loadPos = false
 
 func _physics_process(_delta: float) -> void:
+	updateKeys()
 	if Global.SolidBoxes:
 		$CharacterBody2D/PlayerCollision.disabled = false
 	else:
@@ -57,11 +62,19 @@ func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
 	
-	if Input.is_action_pressed(jumpKey) && is_on_floor() && !Global.IsTypingInChat:
+	if Input.is_key_pressed(jump) && is_on_floor() && !Global.IsTypingInChat:
 		velocity.y = -jumpHeight
 	
+	var axis = 0
+	if Input.is_key_pressed(left):
+		axis = -1
+	if Input.is_key_pressed(right):
+		axis = 1
+	if Input.is_key_pressed(left) && Input.is_key_pressed(right):
+		axis = 0
+	
 	if !Global.IsTypingInChat:
-		velocity.x = speed * Input.get_axis(leftKey, rightKey)
+		velocity.x = speed * axis
 	
 	move_and_slide()
 
@@ -101,3 +114,13 @@ func spawnStick():
 	stickInstance.stick = stick
 	if get_tree().current_scene.scene_file_path == "res://Scenes/main_menu.tscn":
 		stickInstance.visible = false
+
+func updateKeys():
+	var letters = "F"
+	if who == "PanLoduwka":
+		letters = "PL"
+	elif who == "Toasty":
+		letters = "T"
+	left = Keys.get(letters + "Left")
+	right = Keys.get(letters + "Right")
+	jump = Keys.get(letters + "Jump")

@@ -7,7 +7,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 
 func _process(_delta: float) -> void:
-	if isColliding && Input.is_action_just_pressed("Interract"):
+	if isColliding && Input.is_key_pressed(Keys.Interract):
 		$AnimatedSprite2D.play("Save")
 	if save:
 		save = false

@@ -14,7 +14,7 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	isColliding = false
 
 func _process(_delta: float) -> void:
-	if isColliding && Input.is_action_just_pressed("Interract"):
+	if isColliding && Input.is_key_pressed(Keys.Interract):
 		spawnSpamGuy()
 		if !isInfinite:
 			isColliding = false

@@ -27,11 +27,11 @@ func _process(_delta: float) -> void:
 			position.x = lerp(position.x, node.position.x, 0.1)
 			position.y = lerp(position.y, node.position.y, 0.1)
 	
-	if Input.is_action_just_pressed("CamFency") && scene.has_node("Fency"):
+	if Input.is_key_pressed(Keys.CamF) && scene.has_node("Fency"):
 		Global.FollowWho = "Fency"
-	elif Input.is_action_just_pressed("CamPanLoduwka") && scene.has_node("PanLoduwka"):
+	elif Input.is_key_pressed(Keys.CamPL) && scene.has_node("PanLoduwka"):
 		Global.FollowWho = "PanLoduwka"
-	elif Input.is_action_just_pressed("CamToasty") && scene.has_node("Toasty"):
+	elif Input.is_key_pressed(Keys.CamT) && scene.has_node("Toasty"):
 		Global.FollowWho = "Toasty"
 	
 	#Achievements Label
