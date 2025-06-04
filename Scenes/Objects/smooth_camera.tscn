@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqgbiq10py5uo"]
+[gd_scene load_steps=5 format=3 uid="uid://dqgbiq10py5uo"]
 
 [ext_resource type="Script" uid="uid://b0kbkj5q3qn08" path="res://Scripts/smooth_camera.gd" id="1_8ba7x"]
+[ext_resource type="Script" uid="uid://r7vo1w3fgtwa" path="res://Scripts/debug_label.gd" id="2_sgliu"]
 [ext_resource type="AudioStream" uid="uid://bbu42d44bjyi7" path="res://SoundEffects/souAch.wav" id="2_y6m4u"]
 [ext_resource type="Script" uid="uid://bcvx8el1c0ucf" path="res://Scripts/chat.gd" id="3_5n427"]
 
@@ -18,6 +19,27 @@ offset_top = -200.0
 offset_right = -219.0
 offset_bottom = -40.0
 bbcode_enabled = true
+
+[node name="DebugLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -354.0
+offset_top = -199.0
+offset_right = 337.0
+offset_bottom = 164.0
+text = "Fency pos, velocity, hp, maxhp: POF VEF FHEP FMHELP
+PanLoduwka pos, hp, maxhp, velocity: POPL VEPL PLHEP PLMNYEH
+Toasty pos, velocity, hp, maxhp: POT VOT TOASTTHISHAP MAXEDTOASTING
+Room: RAM
+Amount of nodes: NODERS
+Beans: GIVEMEBEANS
+Got Chip: CHIEEEP
+Camera Follow Who: SHIEET
+
+Achievements:
+Shown Achievements: SACHTS
+Player Achievements: PLACHTS
+"
+script = ExtResource("2_sgliu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_y6m4u")

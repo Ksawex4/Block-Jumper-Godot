@@ -4,10 +4,21 @@ var achievement = ""
 var ppos = Vector2(-355, 200)
 var hiddden = true
 var MaxSmoothSpeed = 1000
+var Debug = false
 
 func _process(_delta: float) -> void:
+	if Debug && !$DebugLabel.visible:
+		$DebugLabel.visible = true
+	elif !Debug && $DebugLabel.visible:
+		$DebugLabel.visible = false
 	var scene = get_tree().current_scene
 	var node = scene.get_node_or_null(Global.FollowWho)
+	
+	if Input.is_action_just_pressed("DebugLabel"):
+		if Debug:
+			Debug = false
+		else:
+			Debug = true
 	
 	if node != null:
 		if node.velocity.x > MaxSmoothSpeed or node.velocity.y > MaxSmoothSpeed:
