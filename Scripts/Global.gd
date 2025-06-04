@@ -24,6 +24,7 @@ var QueuedMessages = []
 var IsTypingInChat = false
 var ChatInstantSend = 512
 var SolidBoxes = false
+var AchSound = "res://SoundEffects/souAch.wav"
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):
@@ -78,7 +79,8 @@ func saveGame(pos):
 		"MaxHPs": [FencyMaxHP, ToastyMaxHP, PanLoduwkaMaxHP],
 		"Scene": get_tree().current_scene.scene_file_path,
 		"Sticks": [FStick, TStick, PLStick],
-		"Beans": Beans
+		"Beans": Beans,
+		"TOAST": TOASTS.TOAST
 	}
 	var file = FileAccess.open("user://save.bj", FileAccess.WRITE)
 	var jsonString = JSON.stringify(struct)

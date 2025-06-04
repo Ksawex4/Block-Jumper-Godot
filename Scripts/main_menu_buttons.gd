@@ -38,6 +38,7 @@ func _on_load_button_pressed() -> void:
 			Global.loadPositionX = float(data.get("X"))
 			Global.loadPositionY = float(data.get("Y"))
 			Global.loadPos = true
+			TOASTS.TOAST = data.get("TOAST")
 		file.close()
 		get_tree().change_scene_to_file(scene)
 

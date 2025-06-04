@@ -54,6 +54,8 @@ collision_layer = 2
 script = ExtResource("1_j1hk5")
 jumpHeight = 420
 
+[node name="Duck2D" type="Sprite2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4x1qq")

@@ -22,6 +22,7 @@ config/windows_native_icon="res://FencyIcon.ico"
 
 Global="*res://Scripts/Global.gd"
 Keys="*res://Scripts/Keys.gd"
+TOASTS="*res://Scripts/ToastEvents.gd"
 
 [display]
 

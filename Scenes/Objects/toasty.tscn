@@ -34,6 +34,8 @@ WhosMaxHp = "ToastyMaxHP"
 stick = "TStick"
 who = "Toasty"
 
+[node name="Duck2D" type="Sprite2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kect0")
 

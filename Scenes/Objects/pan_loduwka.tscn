@@ -128,6 +128,8 @@ WhosMaxHp = "PanLoduwkaMaxHP"
 stick = "PLStick"
 who = "PanLoduwka"
 
+[node name="Duck2D" type="Sprite2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wc7eg")
 frame_progress = 0.594986

@@ -49,6 +49,9 @@ func showAchievement(ach):
 	hiddden = false
 	ppos = Vector2(-355, -200)
 	$AchievementsLabel.text = ach
+	$AudioStreamPlayer.stream = load((Global.AchSound))
+	if Global.AchSound == "res://SoundEffects/souTOASTAch.wav":
+		$AudioStreamPlayer.volume_db = 30
 	$AudioStreamPlayer.play()
 	await get_tree().create_timer(4.0).timeout
 	ppos = Vector2(-491, -200)

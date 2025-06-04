@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 			var Toast = SCEEEENE.get_node("Toasty")
 			text = text.replace("POT", str(Toast.position)).replace("VOT", str(Toast.velocity)).replace("TOASTTHISHAP", str(Global.ToastyHP)).replace("MAXEDTOASTING", str(Global.ToastyMaxHP))
 		text = text.replace("RAM", SCEEEENE.name).replace("NODERS", str(HowManyNodesHere())).replace("GIVEMEBEANS", str(Global.Beans)).replace("CHIEEEP", str(Global.gotChip)).replace("SHIEET", Global.FollowWho).replace("SACHTS", str(Global.shownAchievements)).replace("PLACHTS", str(Global.playerAchievements))
-
+		text = text.replace("DUCK", str(TOASTS.TOAST))
 func HowManyNodesHere():
 	var count = 0
 	var queue = [get_tree().current_scene]

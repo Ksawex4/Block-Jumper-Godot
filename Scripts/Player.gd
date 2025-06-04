@@ -43,6 +43,7 @@ func _physics_process(_delta: float) -> void:
 		$CharacterBody2D/PlayerCollision.disabled = false
 	else:
 		$CharacterBody2D/PlayerCollision.disabled = true
+	
 	if hasLeftAnimation:
 		if velocity.x > 0 && $AnimatedSprite2D.animation != "walkRight":
 			$AnimatedSprite2D.play("walkRight")
@@ -50,6 +51,17 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite2D.play("walkLeft")
 		elif velocity.x == 0 && $AnimatedSprite2D.animation != "default":
 			$AnimatedSprite2D.play("default")
+	
+	if who == "Fency" && TOASTS.WhoDuck == 1 or TOASTS.WhoDuck == 4 && who == "Fency" or TOASTS.WhoDuck == 4 && who == "PanLoduwka":
+		$Duck2D.texture = load("res://Textures/Quack.jpg")
+		$AnimatedSprite2D.visible = false
+	if who == "PanLoduwka" && TOASTS.WhoDuck == 2:
+		$Duck2D.texture = load("res://Textures/Quack.jpg")
+		$AnimatedSprite2D.visible = false
+	if who == "Toasty" && TOASTS.WhoDuck == 3 or TOASTS.WhoDuck == 4 && who == "Toasty":
+		$Duck2D.texture = load("res://Textures/Quack.jpg")
+		$AnimatedSprite2D.visible = false
+	
 	if Global.get(WhosHp) <= 0:
 		queue_free()
 	

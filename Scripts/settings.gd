@@ -20,10 +20,15 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey && event.pressed && waitingForInput:
-		Keys.set(watKey, event.keycode)
+		if TOASTS.TOAST != 16:
+			Keys.set(watKey, event.keycode)
+		else:
+			TOASTS.usedKeys.erase(Keys.get(watKey))
+			Keys.set(watKey, TOASTS.randKey())
 		waitingForInput = false
 		$INFO.visible = false
-		Keys.SaveKeys()
+		if TOASTS.TOAST != 16:
+			Keys.SaveKeys()
 
 func _on_f_left_pressed() -> void:
 	watKey = "FLeft"

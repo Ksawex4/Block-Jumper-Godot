@@ -34,6 +34,7 @@ Amount of nodes: NODERS
 Beans: GIVEMEBEANS
 Got Chip: CHIEEEP
 Camera Follow Who: SHIEET
+TOAST: DUCK
 
 Achievements:
 Shown Achievements: SACHTS
@@ -43,6 +44,7 @@ script = ExtResource("2_sgliu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_y6m4u")
+volume_db = 10.0
 
 [node name="ChatControl" type="Control" parent="."]
 layout_mode = 3
