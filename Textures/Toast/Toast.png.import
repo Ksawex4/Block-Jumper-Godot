@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg6akmc5sv4t"
-path="res://.godot/imported/BeanF4.png-f706f6d98f0b13d0f21606bb86702f41.ctex"
+uid="uid://cqtbbusb3rp4m"
+path="res://.godot/imported/Toast.png-3805256fc0ec048d6c0d79f054f0e868.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Bean/BeanF4.png"
-dest_files=["res://.godot/imported/BeanF4.png-f706f6d98f0b13d0f21606bb86702f41.ctex"]
+source_file="res://Textures/Toast/Toast.png"
+dest_files=["res://.godot/imported/Toast.png-3805256fc0ec048d6c0d79f054f0e868.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

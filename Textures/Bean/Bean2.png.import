@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7i1a38wljhdg"
-path="res://.godot/imported/BeanF3.png-30cfddc8e426961f6b25a8d12a73aa14.ctex"
+uid="uid://dp5xfsw14odfs"
+path="res://.godot/imported/Bean2.png-1488b7a873ca9d5891ef7a2caea502e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Bean/BeanF3.png"
-dest_files=["res://.godot/imported/BeanF3.png-30cfddc8e426961f6b25a8d12a73aa14.ctex"]
+source_file="res://Textures/Bean/Bean2.png"
+dest_files=["res://.godot/imported/Bean2.png-1488b7a873ca9d5891ef7a2caea502e3.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

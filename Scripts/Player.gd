@@ -24,6 +24,16 @@ func _ready() -> void:
 		print(str(Global.loadPositionX))
 		print(str(Global.loadPositionY))
 		print(str(global_position))
+	if TOASTS.rigid && get_tree().current_scene.scene_file_path != "res://Scenes/main_menu.tscn":
+		var rigidMe = "res://Scenes/Objects/rigid" + who + ".tscn"
+		var object = load(rigidMe).instantiate()
+		object.global_position = global_position
+		object.linear_velocity = velocity
+		object.name = "rigid" + who
+		call_deferred("spawnChild", object)
+		if Global.FollowWho == who:
+			Global.FollowWho = "rigid" + who
+		queue_free()
 	$SolidsCollision.disabled = true
 	hasLeftAnimation = $AnimatedSprite2D.sprite_frames.has_animation("walkLeft")
 	$AnimatedSprite2D.play("default")
@@ -136,3 +146,6 @@ func updateKeys():
 	left = Keys.get(letters + "Left")
 	right = Keys.get(letters + "Right")
 	jump = Keys.get(letters + "Jump")
+
+func spawnChild(object):
+	get_tree().current_scene.add_child(object)

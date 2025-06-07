@@ -26,6 +26,8 @@ func _process(_delta: float) -> void:
 		else:
 			position.x = lerp(position.x, node.position.x, 0.1)
 			position.y = lerp(position.y, node.position.y, 0.1)
+		if TOASTS.rigid:
+			rotation = node.rotation
 	
 	if Input.is_key_pressed(Keys.CamF) && scene.has_node("Fency"):
 		Global.FollowWho = "Fency"

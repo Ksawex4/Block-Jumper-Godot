@@ -11,6 +11,7 @@ KEY_F6, KEY_F7, KEY_F9, KEY_F10, KEY_F11, KEY_F12]
 var usedKeys = []
 var IsSpamming = false
 var WhoDuck = -1
+var rigid = false
 
 func _process(delta: float) -> void:
 	if FileAccess.file_exists("user://notVeryRandomToast.txt"):
@@ -44,12 +45,12 @@ func getTheToastEvent():
 		IsSpamming = true
 	if TOAST == 37:
 		WhoDuck = randi_range(1,4)
-		
+	if TOAST == 54:
+		rigid = true
 
 func randKey():
-	var key = KEY_W
-	key = randi_range(1, UsableKeys.size() - 1)
-	while usedKeys.has(UsableKeys[key]):
-		key = randi_range(1, UsableKeys.size())
-	usedKeys.append(UsableKeys[key])
-	return UsableKeys[key]
+	var IntKey = randi_range(1, UsableKeys.size())
+	while usedKeys.has(UsableKeys[IntKey]):
+		IntKey = randi_range(1, UsableKeys.size())
+	usedKeys.append(UsableKeys[IntKey])
+	return UsableKeys[IntKey]

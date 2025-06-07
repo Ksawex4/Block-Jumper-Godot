@@ -15,25 +15,26 @@ var CamPL = KEY_2
 var CamT = KEY_3
 
 func SaveKeys():
-	var struct = {
-		"FencyLeft": FLeft,
-		"FencyRight": FRight,
-		"FencyJump": FJump,
-		"ToastyLeft": TLeft,
-		"ToastyRight": TRight,
-		"ToastyJump": TJump,
-		"PanLoduwkaLeft": PLLeft,
-		"PanLoduwkaRight": PLRight,
-		"PanLoduwkaJump": PLJump,
-		"Interract": Interract,
-		"CamFency": CamF,
-		"CamPanLoduwka": CamPL,
-		"CamToasty": CamT
-	}
-	var file = FileAccess.open("user://settings.bj", FileAccess.WRITE)
-	var jsonString = JSON.stringify(struct)
-	file.store_string(jsonString)
-	file.close()
+	if TOASTS.TOAST != 16:
+		var struct = {
+			"FencyLeft": FLeft,
+			"FencyRight": FRight,
+			"FencyJump": FJump,
+			"ToastyLeft": TLeft,
+			"ToastyRight": TRight,
+			"ToastyJump": TJump,
+			"PanLoduwkaLeft": PLLeft,
+			"PanLoduwkaRight": PLRight,
+			"PanLoduwkaJump": PLJump,
+			"Interract": Interract,
+			"CamFency": CamF,
+			"CamPanLoduwka": CamPL,
+			"CamToasty": CamT
+		}
+		var file = FileAccess.open("user://settings.bj", FileAccess.WRITE)
+		var jsonString = JSON.stringify(struct)
+		file.store_string(jsonString)
+		file.close()
 
 func LoadKeys():
 	var file = FileAccess.open("user://settings.bj", FileAccess.READ)

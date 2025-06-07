@@ -29,7 +29,7 @@ var AchSound = "res://SoundEffects/souAch.wav"
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):
 		loadAchievements()
-	if FileAccess.file_exists("user://settings.bj"):
+	if FileAccess.file_exists("user://settings.bj") && TOASTS.TOAST != 16:
 		Keys.LoadKeys()
 
 func _process(_delta: float) -> void:
