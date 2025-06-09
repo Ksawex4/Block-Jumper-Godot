@@ -25,6 +25,10 @@ var IsTypingInChat = false
 var ChatInstantSend = 512
 var SolidBoxes = false
 var AchSound = "res://SoundEffects/souAch.wav"
+var timerF = 0
+var timerS = 0
+var timerM = 0
+var SpeedrunMode = false
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):
@@ -33,14 +37,36 @@ func _ready():
 		Keys.LoadKeys()
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("SpeedrunTimerOn"):
+		timerF = 0
+		timerS = 0
+		timerM = 0
+		QuitToMenu()
+		playerAchievements = []
+		shownAchievements = []
+		SpeedrunMode = true
+		
+	
 	if Input.is_action_just_pressed("Quit"):
 		QuitToMenu()
 	
 	if FencyHP <= 0 && PanLoduwkaHP <= 0 && ToastyHP <= 0:
 		QuitToMenu()
+	
+	if Input.is_key_pressed(KEY_B):
+		var bouncy = load("res://Scenes/Objects/bouncy_onurb.tscn").instantiate()
+		if get_tree().current_scene.has_node("Fency"):
+			bouncy.position = get_tree().current_scene.get_node("Fency").position
+			get_tree().current_scene.add_child(bouncy)
+		elif get_tree().current_scene.has_node("PanLoduwka"):
+			bouncy.position = get_tree().current_scene.get_node("PanLoduwka").position
+			get_tree().current_scene.add_child(bouncy)
+		elif get_tree().current_scene.get_node("Toasty"):
+			bouncy.position = get_tree().current_scene.get_node("Toasty").position
+			get_tree().current_scene.add_child(bouncy)
 
 func QuitToMenu():
-	if get_tree().current_scene.scene_file_path != "res://Scenes/main_menu.tscn":
+	if get_tree().current_scene.scene_file_path != "res://Scenes/main_menu.tscn" or SpeedrunMode:
 		FencyHP = 10
 		ToastyHP = 10
 		PanLoduwkaHP = 20

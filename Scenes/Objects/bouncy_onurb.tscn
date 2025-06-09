@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://drblpgimtxb33"]
+
+[ext_resource type="Script" uid="uid://cthfqs5w5a4oh" path="res://Scripts/bouncy_onurb.gd" id="1_elovi"]
+[ext_resource type="Texture2D" uid="uid://dvh4pjq6wy4i7" path="res://Textures/Bouncy_onurB/Bouncy_onurB.png" id="2_rui0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iibyw"]
+size = Vector2(32, 32)
+
+[node name="Bouncy_onurB" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_elovi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rui0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iibyw")

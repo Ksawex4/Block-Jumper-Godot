@@ -16,7 +16,7 @@ func _on_achievements_button_pressed() -> void:
 
 func _on_load_button_pressed() -> void:
 	var scene
-	if FileAccess.file_exists("user://save.bj"):
+	if FileAccess.file_exists("user://save.bj") && !Global.SpeedrunMode:
 		var file = FileAccess.open("user://save.bj", FileAccess.READ)
 		var jsonString = file.get_as_text()
 		var data = JSON.parse_string(jsonString)

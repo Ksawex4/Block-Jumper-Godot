@@ -12,6 +12,13 @@ limit_right = 2147483647
 limit_bottom = 2147483647
 script = ExtResource("1_8ba7x")
 
+[node name="SpeedrunLabel" type="Label" parent="."]
+z_index = 2
+offset_left = -188.0
+offset_top = 149.0
+offset_right = -41.0
+offset_bottom = 202.0
+
 [node name="AchievementsLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
 offset_left = -355.0
