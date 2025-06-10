@@ -35,13 +35,22 @@ func _ready():
 		loadAchievements()
 	if FileAccess.file_exists("user://settings.bj") && TOASTS.TOAST != 16:
 		Keys.LoadKeys()
+	if FileAccess.file_exists("user://TimeSave"):
+		SpeedrunMode = true
+		var file = FileAccess.open("user://TimeSave",FileAccess.READ)
+		var bobie = file.get_as_text()
+		var data = JSON.parse_string(bobie)
+		timerF = data.get("TimeF")
+		
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("SpeedrunTimerOn"):
 		timerF = 0
 		timerS = 0
 		timerM = 0
-		QuitToMenu()
+		BobSpawn.SavedBobs = 0
+		BobSpawn.TotalBobs = 0
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		playerAchievements = []
 		shownAchievements = []
 		SpeedrunMode = true

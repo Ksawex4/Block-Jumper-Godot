@@ -15,6 +15,7 @@ func _on_achievements_button_pressed() -> void:
 	get_parent().get_node("Fency").position = Vector2(-64, 751)
 
 func _on_load_button_pressed() -> void:
+	BobSpawn.TotalBobs = 0
 	var scene
 	if FileAccess.file_exists("user://save.bj") && !Global.SpeedrunMode:
 		var file = FileAccess.open("user://save.bj", FileAccess.READ)

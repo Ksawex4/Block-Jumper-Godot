@@ -172,6 +172,7 @@ player = "Toasty"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8h618")
+volume_db = -5.0
 autoplay = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

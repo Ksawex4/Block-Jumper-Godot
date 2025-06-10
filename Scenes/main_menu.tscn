@@ -168,6 +168,7 @@ shape = SubResource("RectangleShape2D_y1wm0")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5egv6")
+volume_db = -5.0
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

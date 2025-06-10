@@ -2,6 +2,7 @@
 
 - All textures are made by me and my friend.
 - All songs are made by my friend.
+- All sound effect are made by me and my friend.
 
 
 ## Credits

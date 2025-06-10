@@ -36,6 +36,8 @@ func _ready() -> void:
 	updateKeys()
 	$SolidsCollision.disabled = false
 	Global.loadPos = false
+	
+	BobSpawn.TotalBobs = 0 # Bob change room reset
 
 func _physics_process(_delta: float) -> void:
 	updateKeys()

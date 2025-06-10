@@ -8,8 +8,9 @@ var Debug = false
 
 func _process(_delta: float) -> void:
 	if Global.SpeedrunMode:
-		var timer
-		Global.timerF += 1
+		var timer = "If you see this, then that means that speedrun mode broke"
+		if Global.playerAchievements.size() != 6:
+			Global.timerF += 1
 		if Global.timerF >= 60:
 			Global.timerS += 1
 			Global.timerF -= 60
@@ -20,8 +21,7 @@ func _process(_delta: float) -> void:
 			timer = str(Global.timerS) + ":" + str(Global.timerF)
 		if Global.timerM >= 1:
 			timer = str(Global.timerM) + ":" + str(Global.timerS) + ":" + str(Global.timerF)
-		if !Global.playerAchievements.size() >= 5:
-			$SpeedrunLabel.text = timer
+		$SpeedrunLabel.text = timer
 	
 	if Debug && !$DebugLabel.visible:
 		$DebugLabel.visible = true

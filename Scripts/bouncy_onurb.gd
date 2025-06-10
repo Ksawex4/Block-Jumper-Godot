@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity
 	if is_on_floor():
-		velocity.y = -randi_range(40,450)
+		velocity.y = -randi_range(40,450                                                                                                                                                                                                                                                                                                                                                                                                                                                                               )
 	velocity.x = Speed * direction
 	if is_on_wall() && wallCooldown <= 0.0:
 		wallCooldown = 0.2

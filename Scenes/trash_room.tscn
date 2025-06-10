@@ -494,6 +494,7 @@ isInfinite = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fanlt")
+volume_db = -5.0
 autoplay = true
 
 [node name="SmoothCamera" parent="." instance=ExtResource("4_6yt8x")]
