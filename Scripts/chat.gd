@@ -44,7 +44,21 @@ func processCommand(text):
 		args = argsPart.split(" ")
 	else:
 		command = text
+	print("chat: Processed Command: \n command: ", command, "\n args: ", args)
 	
+	if !Global.CheatMode && command != "/CheatMode":
+		SendMessage(ChatName, "Cheat Mode is Disabled, to turn on Cheats, type: \"/CheatMode\"\n
+		You won't be able to get any more Achievements and your save Will be Deleted if you want to disable Cheats")
+	if command == "/CheatMode":
+		Global.CheatMode = true
+		SendMessage(ChatName, 'Cheat Mode Enabled, You Can No Longer Get Achievements, To Turn Off Cheats, Type: "/Reset"\n
+		WARNING, This will delete your save!')
+		return
+	
+	if Global.CheatMode:
+		executeCommand(args, command)
+
+func executeCommand(args, command):
 	match command:
 		"/clear":
 			Global.chat = ""
@@ -67,5 +81,13 @@ func processCommand(text):
 			else:
 				Global.SolidBoxes = false
 				SendMessage(ChatName, "players can no longer collide with eachother")
+		"/Reset":
+			if FileAccess.file_exists("user://save.bj"):
+				DirAccess.remove_absolute("user://save.bj")
+				print("chat: Deleted the save file")
+			if FileAccess.file_exists("user://The Bobs have awoken.BOB"):
+				DirAccess.remove_absolute("user://The Bobs have awoken.BOB")
+				print("chat: Deleted the BOB file")
+			get_tree().quit()
 		_:
-			SendMessage(ChatName, "command " + command + " doesn't exist") 
+			SendMessage(ChatName, "Command " + command + " doesn't exist") 

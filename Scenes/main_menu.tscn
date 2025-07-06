@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bfqojctd5pm0c"]
+[gd_scene load_steps=27 format=3 uid="uid://bfqojctd5pm0c"]
 
 [ext_resource type="PackedScene" uid="uid://dqgbiq10py5uo" path="res://Scenes/Objects/smooth_camera.tscn" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dgnrlrrbgl0re" path="res://Textures/Backgrounds/MainMenu.png" id="2_yhxw7"]
@@ -39,6 +39,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1wm0"]
 size = Vector2(20, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1dhk"]
+size = Vector2(42, 20)
 
 [node name="MainScreen" type="Node2D"]
 
@@ -144,6 +147,14 @@ shape = SubResource("RectangleShape2D_y1wm0")
 position = Vector2(308, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(280, 132)
+shape = SubResource("RectangleShape2D_t1dhk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(282, 188)
+shape = SubResource("RectangleShape2D_t1dhk")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-347, 586)
 
@@ -154,6 +165,14 @@ shape = SubResource("RectangleShape2D_y1wm0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(308, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(280, 132)
+shape = SubResource("RectangleShape2D_t1dhk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(282, 188)
+shape = SubResource("RectangleShape2D_t1dhk")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(548, 569)
@@ -166,7 +185,15 @@ shape = SubResource("RectangleShape2D_y1wm0")
 position = Vector2(308, 163)
 shape = SubResource("RectangleShape2D_y1wm0")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(280, 132)
+shape = SubResource("RectangleShape2D_t1dhk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(282, 188)
+shape = SubResource("RectangleShape2D_t1dhk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5egv6")
 volume_db = -5.0
 autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ja1vac5g2jbh"]
+[gd_scene load_steps=6 format=3 uid="uid://ja1vac5g2jbh"]
 
 [ext_resource type="Script" uid="uid://gl2lhotbl5jp" path="res://Scripts/bob.gd" id="1_ynotw"]
 [ext_resource type="Texture2D" uid="uid://7icucx3tyj06" path="res://Textures/Bob/Bob.png" id="2_tpnaw"]
@@ -7,9 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8a15"]
 size = Vector2(20, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpnaw"]
+size = Vector2(20, 30)
+
 [node name="Bob" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 13
+collision_mask = 0
 script = ExtResource("1_ynotw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -22,3 +25,15 @@ texture = ExtResource("2_tpnaw")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_tpnaw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 31
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_tpnaw")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

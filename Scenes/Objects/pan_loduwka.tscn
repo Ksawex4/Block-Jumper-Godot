@@ -127,6 +127,7 @@ WhosHp = "PanLoduwkaHP"
 WhosMaxHp = "PanLoduwkaMaxHP"
 stick = "PLStick"
 who = "PanLoduwka"
+down = 71
 
 [node name="Duck2D" type="Sprite2D" parent="."]
 

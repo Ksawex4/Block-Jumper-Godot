@@ -17,13 +17,12 @@ var DefaultHpBarLenght
 var left = KEY_A
 var right = KEY_D
 var jump = KEY_W
+@export var down = KEY_S
 
 func _ready() -> void:
 	if Global.loadPos:
 		global_position = Vector2(Global.loadPositionX, Global.loadPositionY)
-		print(str(Global.loadPositionX))
-		print(str(Global.loadPositionY))
-		print(str(global_position))
+		print("LoadPositionX: ",Global.loadPositionX, "\nLoadPositionY: ", Global.loadPositionY)
 	$SolidsCollision.disabled = true
 	hasLeftAnimation = $AnimatedSprite2D.sprite_frames.has_animation("walkLeft")
 	$AnimatedSprite2D.play("default")
@@ -41,6 +40,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	updateKeys()
+	
 	if Global.SolidBoxes:
 		$CharacterBody2D/PlayerCollision.disabled = false
 	else:
@@ -76,8 +76,10 @@ func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += Global.Gravity + gravityDifference
 	
-	if Input.is_key_pressed(jump) && is_on_floor() && !Global.IsTypingInChat:
+	if Input.is_key_pressed(jump) && is_on_floor() && !Global.IsTypingInChat && BobSpawn.SavedBobs != 3:
 		velocity.y = -jumpHeight
+	if BobSpawn.SavedBobs == 3 && Input.is_key_pressed(jump):
+		velocity.y = -speed
 	
 	var axis = 0
 	if Input.is_key_pressed(left):
@@ -86,9 +88,20 @@ func _physics_process(_delta: float) -> void:
 		axis = 1
 	if Input.is_key_pressed(left) && Input.is_key_pressed(right):
 		axis = 0
+	if Input.is_key_pressed(down) && BobSpawn.SavedBobs == 3 && !Input.is_key_pressed(jump):
+		velocity.y = speed
+	if BobSpawn.SavedBobs == 3 && position.y > 10000:
+		velocity.y += 10
 	
 	if !Global.IsTypingInChat:
-		velocity.x = speed * axis
+		if BobSpawn.SavedBobs != 3 && BobSpawn.SavedBobs != 5:
+			velocity.x = speed * axis
+		else:
+			if axis != 0:
+				velocity.x += speed * axis / 30
+	
+	if BobSpawn.SavedBobs == 6 && who != "Fency":
+		queue_free()
 	
 	move_and_slide()
 
@@ -100,7 +113,7 @@ func _on_hit_box_area_body_entered(body: Node2D) -> void:
 func hurt(damage):
 	var HP = Global.get(WhosHp) - damage
 	Global.set(WhosHp, HP)
-	print (WhosHp + ": " + str(HP))
+	print (WhosHp, ": ", str(HP))
 	if Global.FencyHP <= 0 && Global.PanLoduwkaHP <= 0 && Global.ToastyHP <= 0:
 		Input.action_press("Quit")
 	updateBar()

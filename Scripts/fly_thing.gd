@@ -12,6 +12,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if !FileAccess.file_exists("user://sól"):
 		queue_free()
+		print("flyingThing: no sól here")
 	
 	if !$NavigationAgent2D.is_target_reached():
 		var navPointDirection = to_local($NavigationAgent2D.get_next_path_position()).normalized()

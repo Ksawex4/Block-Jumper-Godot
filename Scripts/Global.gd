@@ -29,6 +29,7 @@ var timerF = 0
 var timerS = 0
 var timerM = 0
 var SpeedrunMode = false
+var CheatMode = false
 
 func _ready():
 	if FileAccess.file_exists("user://achievements.bj"):
@@ -41,10 +42,10 @@ func _ready():
 		var bobie = file.get_as_text()
 		var data = JSON.parse_string(bobie)
 		timerF = data.get("TimeF")
-		
+		CheatMode = false
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("SpeedrunTimerOn"):
+	if Input.is_action_just_pressed("SpeedrunTimerOn") && !IsTypingInChat:
 		timerF = 0
 		timerS = 0
 		timerM = 0
@@ -53,16 +54,18 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		playerAchievements = []
 		shownAchievements = []
+		if FileAccess.file_exists("user://The Bobs have awoken.BOB"):
+			DirAccess.remove_absolute("user://The Bobs have awoken.BOB")
 		SpeedrunMode = true
 		
 	
-	if Input.is_action_just_pressed("Quit"):
+	if Input.is_action_just_pressed("Quit") && !IsTypingInChat:
 		QuitToMenu()
 	
 	if FencyHP <= 0 && PanLoduwkaHP <= 0 && ToastyHP <= 0:
 		QuitToMenu()
 	
-	if Input.is_key_pressed(KEY_B):
+	if Input.is_key_pressed(KEY_B) && !IsTypingInChat:
 		var bouncy = load("res://Scenes/Objects/bouncy_onurb.tscn").instantiate()
 		if get_tree().current_scene.has_node("Fency"):
 			bouncy.position = get_tree().current_scene.get_node("Fency").position
@@ -115,7 +118,8 @@ func saveGame(pos):
 		"Scene": get_tree().current_scene.scene_file_path,
 		"Sticks": [FStick, TStick, PLStick],
 		"Beans": Beans,
-		"TOAST": TOASTS.TOAST
+		"TOAST": TOASTS.TOAST,
+		"CheatStatus": CheatMode
 	}
 	var file = FileAccess.open("user://save.bj", FileAccess.WRITE)
 	var jsonString = JSON.stringify(struct)

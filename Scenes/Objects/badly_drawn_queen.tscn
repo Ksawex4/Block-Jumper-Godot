@@ -10,6 +10,8 @@ size = Vector2(83, 102)
 
 [node name="BadlyDrawnQueen" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_0lyer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,7 +26,6 @@ autowrap_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gk35a")
-disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

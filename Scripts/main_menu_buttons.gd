@@ -15,13 +15,14 @@ func _on_achievements_button_pressed() -> void:
 	get_parent().get_node("Fency").position = Vector2(-64, 751)
 
 func _on_load_button_pressed() -> void:
-	BobSpawn.TotalBobs = 0
 	var scene
 	if FileAccess.file_exists("user://save.bj") && !Global.SpeedrunMode:
+		BobSpawn.TotalBobs = 0
 		var file = FileAccess.open("user://save.bj", FileAccess.READ)
 		var jsonString = file.get_as_text()
 		var data = JSON.parse_string(jsonString)
 		if data is Dictionary:
+			print("LoadButton: data: ", data)
 			var HPs = data.get("HPs")
 			Global.FencyHP = HPs[0]
 			Global.ToastyHP = HPs[1]
@@ -40,6 +41,7 @@ func _on_load_button_pressed() -> void:
 			Global.loadPositionY = float(data.get("Y"))
 			Global.loadPos = true
 			TOASTS.TOAST = data.get("TOAST")
+			Global.CheatMode = data.get("CheatStatus")
 		file.close()
 		get_tree().change_scene_to_file(scene)
 

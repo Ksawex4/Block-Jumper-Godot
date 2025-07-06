@@ -33,6 +33,7 @@ WhosHp = "ToastyHP"
 WhosMaxHp = "ToastyMaxHP"
 stick = "TStick"
 who = "Toasty"
+down = 75
 
 [node name="Duck2D" type="Sprite2D" parent="."]
 

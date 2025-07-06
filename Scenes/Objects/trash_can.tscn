@@ -4,11 +4,14 @@
 [ext_resource type="Script" uid="uid://dev7a134mfhmo" path="res://Scripts/trash_can.gd" id="1_g4vuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4hho"]
+size = Vector2(40, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6ol"]
 size = Vector2(40, 54)
 
 [node name="TrashCan" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_g4vuy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,8 +19,8 @@ texture_filter = 1
 texture = ExtResource("1_2runf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_b4hho")
-disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

@@ -6,6 +6,8 @@ var isColliding := false
 func _ready() -> void:
 	if isInfinite:
 		$Sprite2D.texture = load("res://Textures/TrashCan/InfiniteTrashCan.png")
+	if BobSpawn.SavedBobs == 6:
+		queue_free()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	isColliding = true

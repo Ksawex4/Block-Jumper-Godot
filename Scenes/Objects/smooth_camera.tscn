@@ -29,11 +29,13 @@ bbcode_enabled = true
 
 [node name="DebugLabel" type="RichTextLabel" parent="."]
 visible = false
+texture_filter = 1
 offset_left = -354.0
 offset_top = -199.0
 offset_right = 337.0
 offset_bottom = 164.0
-text = "Fency pos, velocity, hp, maxhp: POF VEF FHEP FMHELP
+bbcode_enabled = true
+text = "[font_size=12]Fency pos, velocity, hp, maxhp: POF VEF FHEP FMHELP
 PanLoduwka pos, hp, maxhp, velocity: POPL VEPL PLHEP PLMNYEH
 Toasty pos, velocity, hp, maxhp: POT VOT TOASTTHISHAP MAXEDTOASTING
 Room: RAM
@@ -46,7 +48,7 @@ saved Bobs: ITSAMEEE...BOB
 
 Achievements:
 Shown Achievements: SACHTS
-Player Achievements: PLACHTS
+Player Achievements: PLACHTS [/font_size]
 "
 script = ExtResource("2_sgliu")
 

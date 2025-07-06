@@ -14,7 +14,7 @@ var WhoDuck = -1
 var rigid = false
 
 func _process(delta: float) -> void:
-	if FileAccess.file_exists("user://notVeryRandomToast.txt"):
+	if FileAccess.file_exists("user://notVeryRandomToast.txt"): #Will disable achievements in the future or will be removed
 		var file = FileAccess.open("user://notVeryRandomToast.txt", FileAccess.READ)
 		TOAST = int(file.get_as_text())
 		file.close()
@@ -46,7 +46,7 @@ func getTheToastEvent():
 	if TOAST == 37:
 		WhoDuck = randi_range(1,4)
 	if TOAST == 54:
-		rigid = true
+		rigid = true # UNFINISHED
 
 func randKey():
 	var IntKey = randi_range(0, UsableKeys.size() - 1)

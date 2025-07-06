@@ -11,7 +11,7 @@ size = Vector2(50, 46)
 
 [node name="Chip" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 0
+collision_layer = 16
 script = ExtResource("1_ojel0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

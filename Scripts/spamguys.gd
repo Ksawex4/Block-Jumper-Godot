@@ -7,7 +7,7 @@ var wallCooldown := 0.0
 
 func _ready() -> void:
 	var rand = randi_range(0,3)
-	if !Global.playerAchievements.has("[img]res://Textures/Achievements/Trash.png[/img]"):
+	if !Global.playerAchievements.has("[img]res://Textures/Achievements/Trash.png[/img]") && !Global.CheatMode:
 		Global.playerAchievements.append("[img]res://Textures/Achievements/Trash.png[/img]")
 	if rand == 0:
 		$BadlyDrawnSpamton.disabled = false

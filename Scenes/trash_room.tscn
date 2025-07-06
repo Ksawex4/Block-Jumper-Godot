@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjqsvvt2otbkx"]
+[gd_scene load_steps=10 format=3 uid="uid://bjqsvvt2otbkx"]
 
 [ext_resource type="PackedScene" uid="uid://o6chlabw2rnh" path="res://Scenes/Objects/background.tscn" id="1_6yt8x"]
 [ext_resource type="PackedScene" uid="uid://btuf7ucts5n8c" path="res://Scenes/Objects/fency.tscn" id="1_imhd6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d35pybk0uw3rv" path="res://Scenes/Objects/bean_block.tscn" id="5_drr2j"]
 [ext_resource type="PackedScene" uid="uid://0ynbmsngdc15" path="res://Scenes/Objects/trash_can.tscn" id="6_44u3g"]
 [ext_resource type="AudioStream" uid="uid://6w3wleca624c" path="res://Songs/souTrash.wav" id="6_fanlt"]
+[ext_resource type="PackedScene" uid="uid://c53lrc8watfr1" path="res://Scenes/Objects/badly_drawn_queen.tscn" id="7_drr2j"]
 
 [node name="TrashRoom" type="Node2D"]
 
@@ -491,6 +492,10 @@ position = Vector2(224, 736)
 [node name="TrashCan20" parent="Interactables" instance=ExtResource("6_44u3g")]
 position = Vector2(-1296, -256)
 isInfinite = true
+
+[node name="BadlyDrawnQueen" parent="Interactables" instance=ExtResource("7_drr2j")]
+position = Vector2(2040, 616)
+SecretQueen = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fanlt")
